@@ -1,0 +1,11 @@
+  <div class="container">
+    <h1>My bookings</h1>
+  </div>
+<div class="mt-5 mx-5 cards content">
+<% @bookings.each do |booking| %>
+  <div class="card-category">
+    <%= booking.offer.title %>
+    <%= link_to 'My bookings', booking_path(booking) %>
+  </div>
+<% end %>
+</div>
