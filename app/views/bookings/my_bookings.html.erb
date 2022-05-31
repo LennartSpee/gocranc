@@ -5,7 +5,7 @@
 <% @bookings.each do |booking| %>
   <div class="card-category">
     <%= booking.offer.title %>
-    <%= link_to 'My bookings', booking_path(booking) %>
+    <%= link_to 'My bookings', bookings_path(booking) %>
   </div>
 <% end %>
 </div>
