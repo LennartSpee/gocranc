@@ -1,4 +1,4 @@
-# class ProfilesController < ApplicationController
+class ProfilesController < ApplicationController
 #   # def index
 #   #   @profiles = Profile.all
 #   # end
@@ -40,4 +40,4 @@
 #   # def profile_params
 #   #   params.require(:profile).permit(:name, :phone, :age, :address, :bio, :sports, :user_type)
 #   # end
-# end
+end
