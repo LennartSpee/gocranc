@@ -1,0 +1,30 @@
+<div class="mt-5 mx-5">
+<h1 class="text-center">Bookings Overview</h1>
+<div class="mt-5 mx-5">
+<table class="table shadow p-5 bg-white rounded">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Starting Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Booking created</th>
+      <th scope="col">Actions</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @bookings.each do |booking| %>
+    <tr>
+      <th scope="row"><%= booking.offer.title%></th>
+      <td><%= booking.starting_date %></td>
+      <td><%= booking.ending_date %></td>
+      <td><%= booking.created_at.day%>-<%= booking.created_at.month%>-<%= booking.created_at.year %></td>
+      <td><%= link_to 'Edit', edit_booking_path(booking.id), class: "btn btn-accent" %></td>
+      <td><%= link_to 'Delete', "#" %></td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
+</div>
+
+</div>
