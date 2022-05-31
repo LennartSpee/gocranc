@@ -1,0 +1,40 @@
+<div class="flex-item">
+  <div class="mt-5 mx-5 card-trip">
+    <%# <% if @offer.photo.key %>
+      <%# <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
+    <%# <% else %>
+      <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% end %>
+    <div class="card-trip-infos">
+      <div>
+        <h1><%= @offer.title %></h1>
+        <strong><%= @offer.description %></strong>
+      </div>
+      <h3><%= @offer.price %> €</h3>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+    <div class="card-trip-infos d-flex justify-content-start">
+      <h5>Duration: <%= @offer.duration %> | </h5>
+      <h5> Location: <%= @offer.location %></h5>
+    </div>
+  </div>
+</div>
+<div class="mt-5 mx-5">
+  <%# <div style="width: 100%; height: 400px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>
+    <%# data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
+  <%# </div> %>
+</div>
+<div class="mt-5 mb-5 mx-5 footer">
+  <%= link_to 'Back', offers_path, class: "btn btn-accent" %>
+  <% if     @offer.user == current_user %>
+    <%= link_to 'Edit', edit_offer_path, class: "btn btn-accent" %>
+    <%= link_to 'Delete', offer_path(@offer), method: :delete,  class: "btn btn-accent" %>
+  <% else %>
+
+    <%= link_to 'New booking for this offer', new_offer_booking_path(@offer), class: "btn btn-accent" %>
+
+  <% end %>
+</div>
+<br>
