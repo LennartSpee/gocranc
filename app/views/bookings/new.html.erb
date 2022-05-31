@@ -2,8 +2,8 @@
   <h1 class="text-center">Here is your offers</h1>
   <div class="form">
     <%= simple_form_for [@offer, @booking] do |f| %>
-      <%= f.input :starting_date %>
-      <%= f.input :ending_date %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date,  as: :date, html5: true %>
       <%= f.submit "Submit Booking", class: "btn btn-primary" %>
     <% end %>
   </div>
