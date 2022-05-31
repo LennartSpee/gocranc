@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :new, :edit, :update, :destroy]
     resources :reviews, only: :create
   end
-  resources :bookings, only: [:show, :edit, :update, :destroy, :index] do
-  end
+  resources :bookings, only: [:show, :edit, :update, :destroy, :index]
+  get '/my_offers', to: "offers#my_offers"
 end
