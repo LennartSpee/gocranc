@@ -1,0 +1,11 @@
+  <div class="container">
+    <h1>My offers</h1>
+  </div>
+<div class="mt-5 mx-5 cards content">
+<% @offers.each do |offer| %>
+  <div class="card-category" style="background-image: <%= offer.photo %>;">
+    <%= offer.title %>
+    <%= link_to 'See offer', offer_path(offer)%>
+  </div>
+<% end %>
+</div>
