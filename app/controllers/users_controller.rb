@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def profile
+
+  end
+
   private
 
   def user_params

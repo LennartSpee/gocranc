@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :offers
   has_many :chatrooms
   has_many :messages
+  has_one :profile
 end
