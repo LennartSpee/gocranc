@@ -90,8 +90,6 @@ ActiveRecord::Schema.define(version: 2022_05_30_160526) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-<<<<<<< HEAD
-=======
 
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
@@ -99,5 +97,4 @@ ActiveRecord::Schema.define(version: 2022_05_30_160526) do
   add_foreign_key "messages", "users"
   add_foreign_key "offers", "users"
   add_foreign_key "profiles", "users"
->>>>>>> 2751f453c4414c1485fb85565825407ec70ebc55
 end
