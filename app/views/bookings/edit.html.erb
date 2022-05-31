@@ -1,8 +1,3 @@
 <h1 class="text-center">Edit your booking</h1>
-<ul>
-<%= simple_form_for @booking do |f| %>
-  <%= f.input :starting_date %>
-  <%= f.input :ending_date %>
-  <%= f.submit :submit, class: "btn btn-primary" %>
-<% end %>
+  <%= render "form" %>
 <div class="pt-5 center"><%= link_to 'Back to bookings page', root_path, class: "btn btn-accent" %></div>
