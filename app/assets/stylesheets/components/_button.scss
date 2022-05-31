@@ -1,0 +1,29 @@
+.btn-accent {
+  color: #ffffff;
+  background-color: $accent ;
+  padding: 5px 15px;
+  border-radius: $border-radius;
+  font-weight: lighter;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  margin: 0px 5px;
+  text-decoration: none;
+  transform:skew(-8deg);
+}
+.btn-accent-big {
+  color: #ffffff;
+  background-color: $accent ;
+  padding: 20px 70px;
+  border-radius: $border-radius;
+  font-weight: lighter;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  margin: 0px 5px;
+  text-decoration: none;
+  transform:skew(-8deg);
+}
+
+.btn-accent:hover {
+  opacity: 1;
+  color: #ffffff;
+}
