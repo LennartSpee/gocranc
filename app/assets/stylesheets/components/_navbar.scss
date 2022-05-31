@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  text-transform: uppercase;
+  font-style: italic;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +9,11 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 200px;
+}
+
+.navbar-lewagon .navbar-brand img:hover {
+  // webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+  filter: blur(4px);
+  transition: 0.5s;
 }
