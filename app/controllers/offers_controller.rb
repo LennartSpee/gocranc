@@ -9,20 +9,27 @@ class OffersController < ApplicationController
     #     info_window: render_to_string(partial: "info_window", locals: { offer: offer })
     #   }
     # end
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+      }
+    end
   end
 
   def show
     @offer = Offer.find(params[:id])
     @review = Review.new
 
-    # @markers = [
-    #   {
-    #     lat: @offer.latitude,
-    #     lng: @offer.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: { offer: @offer }),
-    #     image_url: helpers.asset_url("")
-    #   }
-    # ]
+    @markers = [
+      {
+        lat: @offer.latitude,
+        lng: @offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: @offer }),
+        image_url: helpers.asset_url("")
+      }
+    ]
   end
 
   def new
