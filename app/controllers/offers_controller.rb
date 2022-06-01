@@ -1,28 +1,34 @@
 class OffersController < ApplicationController
   def index
-    @offers = Offer.all
+    @offers = Offer.geocoded
+     if params[:query].present?
+       @offers = Offer.search_by_title_and_location(params[:query])
+     else
+       @offers = Offer.all
+     end
 
-    # @markers = @offers.geocoded.map do |offer|
-    #   {
-    #     lat: offer.latitude,
-    #     lng: offer.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: { offer: offer })
-    #   }
-    # end
+    @markers = @offers.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
+        image_url: helpers.asset_url("marker.png")
+      }
+    end
   end
 
   def show
     @offer = Offer.find(params[:id])
     @review = Review.new
 
-    # @markers = [
-    #   {
-    #     lat: @offer.latitude,
-    #     lng: @offer.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: { offer: @offer }),
-    #     image_url: helpers.asset_url("")
-    #   }
-    # ]
+    @markers = [
+      {
+        lat: @offer.latitude,
+        lng: @offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: @offer }),
+        image_url: helpers.asset_url("")
+      }
+    ]
   end
 
   def new
@@ -54,6 +60,14 @@ class OffersController < ApplicationController
 
   def my_offers
     @offers = current_user.offers
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
+        image_url: helpers.asset_url("marker.png")
+      }
+    end
   end
 
   def destroy

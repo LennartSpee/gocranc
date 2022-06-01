@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>My offers</h1>
+</div>
+<div style="width: 100%; height: 400px;"data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>" data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+<div class="mt-5 mx-5">
+  <% @bookings.each do |booking| %>
+      <tr>
+      <th scope="row"><%= booking.offer.title%></th>
+      <td><%= booking.start_date %></td>
+      <td><%= booking.end_date %></td>
+      <td><%= booking.created_at.day%>-<%= booking.created_at.month%>-<%= booking.created_at.year %></td>
+      <td><%= link_to 'Accept', "destroy_booking_path(booking.id)", class: "btn btn-accent" %><%= link_to 'Deny', "#", class: "btn btn-accent" %></td>
+      </tr>
+
+      <div>
+        <%= booking.start_date %>
+        <%# <%= link_to 'See offer', offer_path(offer)%>
+      </div>
+  <% end %>
+</div>

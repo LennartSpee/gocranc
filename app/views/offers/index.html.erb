@@ -1,17 +1,22 @@
 <div class="banner">
   <div class="container">
-    <h1>Offer Overview</h1>
+    <h1>Adventures for you</h1>
     <br>
-    <p>    Display and edit your offers and let people know what you want to teach.</p>
+    <p>checkout these offers for you most interesting trips</p>
     <%= link_to 'Create new offer', new_offer_path, class: "btn btn-accent" %>
+    <div class="mt-5 mx-5">
+      <div style="width: 100%; height: 400px;" data-controller="mapbox" data-mapbox-markers-value="<%= @markers.to_json %>" data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
   </div>
 </div>
+
 <div class="mt-5 mx-5 cards content">
 <% @offers.each do |offer| %>
-  <%# <div class="card-category" style="background-image: url('<%= offer.photo.key.present? ? cl_image_path(offer.photo.key) : '' %>
-    <div class="card-category">
-    <%= offer.title %><%= link_to 'Show', offer_path(offer.id) %>
+<%= link_to offer_path(offer.id) do %>
+  <div class="card-category" style="background-image: url('<%= offer.photo.key.present? ? cl_image_path(offer.photo.key) : '' %>' )" >
+    <%= offer.title %>
   </div>
+  <% end %>
 <% end %>
 </div>
-<br>

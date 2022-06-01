@@ -1,11 +1,12 @@
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: #000;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: $border-radius;
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
@@ -35,5 +36,5 @@
   position: absolute;
   right: 16px;
   top: -20px;
-  width: 40px;
+  width: 50px;
 }

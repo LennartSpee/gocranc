@@ -4,9 +4,19 @@
       <%= image_tag "logo.png", alt: "getcrank.io", width: 200 %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler search" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div>
+      <%= form_tag offers_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "find your adventure"
+        %>
+        <%= submit_tag "Search", class: "btn btn-search" %>
+      <% end %>
+    </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
@@ -28,7 +38,7 @@
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle ml-20px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if current_user.profile.present? && current_user.profile.id.present? %>
-              <%= link_to "My Profile", profile_path(current_user.profile), class: "dropdown-item" %>
+              <%= link_to "My Profile", my_profile_show_path(current_user.profile), class: "dropdown-item" %>
               <% end %>
               <%= link_to 'Create new offer', new_offer_path, class: "dropdown-item" %>
               <%= link_to 'See my offers', my_offers_path, class: "dropdown-item" %>
