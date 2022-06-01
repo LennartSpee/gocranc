@@ -12,7 +12,7 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/tito124pi/cl3viypm8000k15tckqbwy0sd"
     })
 
     this.#addMarkersToMap()
@@ -21,9 +21,18 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map)
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      const customMarker = document.createElement("div")
+      customMarker.className = "marker"
+      customMarker.style.backgroundImage = `url('${marker.image_url}')`
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.width = "25px"
+      customMarker.style.height = "25px"
+
+      new mapboxgl.Marker(customMarker)
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
+      .addTo(this.map)
     });
   }
 
