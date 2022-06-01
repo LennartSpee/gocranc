@@ -5,7 +5,7 @@
   <%= f.input :age %>
   <%= f.input :address %>
   <%= f.input :bio %>
-  <%= f.input :sports, as: :check_boxes %>
+  <%= f.input :sports, collection: ["Surf", "Hiking", "Snowboard", "Windsurf", "Ski"], as: :check_boxes, input_html: { class: "toggle" }  %>
   <%= f.input :user_type, :collection => %w[User Guide] %>
   <%= f.button :submit, 'Save', class: "btn btn-accent" %>
  <% end %>
