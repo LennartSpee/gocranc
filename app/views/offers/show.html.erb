@@ -1,9 +1,9 @@
 <div class="flex-item">
   <div class="mt-5 mx-5 card-trip">
-    <%# <% if @offer.photo.key %>
-      <%# <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
-    <%# <% else %>
-      <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% if @offer.photo.key %>
+      <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
     <% end %>
     <div class="card-trip-infos">
       <div>
