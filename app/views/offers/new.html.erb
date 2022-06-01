@@ -8,9 +8,9 @@
   <%= f.input :description %>
   <%= f.input :title %>
   <%= f.input :location,
-              input_html: { data: { geocoder_target: "address" } },
+              input_html: { data: { geocoder_target: "location" }, class: "d-none" },
               wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-  <%= f.button :submit, class: "btn btn-accent" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
 <div class="pt-5 center"><%= link_to 'Back to list page', root_path, class: "btn btn-accent" %></div>
 </div>

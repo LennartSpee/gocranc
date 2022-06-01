@@ -1,16 +1,18 @@
 class OffersController < ApplicationController
   def index
+    @offers = Offer.geocoded
      if params[:query].present?
        @offers = Offer.search_by_title_and_location(params[:query])
      else
        @offers = Offer.all
      end
 
-    @markers = @offers.geocoded.map do |offer|
+    @markers = @offers.map do |offer|
       {
         lat: offer.latitude,
         lng: offer.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
+        image_url: helpers.asset_url("marker.png")
       }
     end
   end
@@ -62,7 +64,8 @@ class OffersController < ApplicationController
       {
         lat: offer.latitude,
         lng: offer.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
+        image_url: helpers.asset_url("marker.png")
       }
     end
   end
