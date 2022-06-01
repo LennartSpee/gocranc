@@ -11,10 +11,10 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user = current_user
     if @profile.save
-      flash[:success] = "Profile saved"
+      #flash[:success] = "Profile saved"
       redirect_to root_path
     else
-      flash[:error] = "Error"
+      #flash[:error] = "Error"
       render :new
     end
   end
@@ -23,13 +23,22 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
+  def my_profile
+    @profile = current_user.profile
+  end
+
   def edit
     @profile = current_user.profile
   end
 
   def update
-    @profile.update(profile_params)
-    respond_with(@profile)
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      flash[:notice] = "Profile successfully changed"
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private

@@ -19,14 +19,21 @@
     </div>
   </div>
 </div>
-  <%= link_to 'Back', offers_path, class: "btn btn-accent" %>
+<div class="mt-5 mx-5">
+  <div style="width: 100%; height: 400px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
+ <div class="mt-5 mb-5 mx-5 footer">
+  <%= link_to 'Back', offers_path, class: "btn-lg btn-accent" %>
   <% if     @offer.user == current_user %>
-    <%= link_to 'Edit', edit_offer_path, class: "btn btn-accent" %>
-    <%= link_to 'Delete', offer_path(@offer), method: :delete,  class: "btn btn-accent" %>
+    <%= link_to 'Edit', edit_offer_path, class: "btn-lg btn-accent" %>
+    <%= link_to 'Delete', offer_path(@offer), method: :delete,  class: "btn-lg btn-accent" %>
   <% else %>
 
-    <%= link_to 'New booking for this offer', new_offer_booking_path(@offer), class: "btn btn-accent" %>
+    <%= link_to 'New booking for this offer', new_offer_booking_path(@offer), class: "btn-lg btn-accent" %>
 
   <% end %>
 </div>
-<br>
