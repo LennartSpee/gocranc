@@ -1,7 +1,9 @@
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: #ffffff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: $border-radius;
+  color: black;
 }
 
 .card-trip > img {
@@ -35,5 +37,5 @@
   position: absolute;
   right: 16px;
   top: -20px;
-  width: 40px;
+  width: 50px;
 }
