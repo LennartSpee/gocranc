@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Our Guides</h1>
+</div>
+
+<div class="mt-5 mx-5 cards content">
+  <% @profiles.each do |profile| %>
+    <div class="card-category" style="background-image: url('<%= offer.photo.key.present? ? cl_image_path(offer.photo.key) : '' %>')">
+        <%= profile.name %>
+        <%= profile.address %>
+        <%= profile.sports %>
+        <%= link_to 'See Guide', profile_path(profile)%>
+    </div>
+  <% end %>
+</div>
+<div class="mt-5 mx-5 cards content">
+  <% @profiles.each do |profile| %>
+    <div>
+      <%= profile.name %><%= link_to 'Show', "offer_path(offer.id)" %>
+    </div>
+  <% end %>
+</div>

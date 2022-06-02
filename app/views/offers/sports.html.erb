@@ -1,0 +1,24 @@
+<div class="banner">
+  <div class="container">
+    <h1>Adventures for you</h1>
+    <br>
+    <p>checkout these offers for you most interesting trips</p>
+    <%= link_to 'Create new offer', new_offer_path, class: "btn btn-accent" %>
+  </div>
+</div>
+<% if @offers.present? %>
+<div class="mt-5 mx-5 cards content">
+  <% @offers.each do |offer| %>
+    <div class="card-category" style="background-image: url('<%= offer.photo.key.present? ? cl_image_path(offer.photo.key) : '' %>')">
+      <%= offer.title %>
+      <%= link_to 'Show', offer_path(offer.id) %>
+    </div>
+  <% end %>
+</div>
+<% else %>
+<div class="mt-5 mx-5 cards content">
+<h1>No Offers for this sport... <%= link_to "Try again.. ",root_path %></h1>
+</div>
+
+<% end %>
+<br>
