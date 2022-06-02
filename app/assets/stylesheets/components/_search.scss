@@ -1,0 +1,17 @@
+.search {
+  border: none;
+}
+
+.btn-search {
+  background-color: $accent;
+  border-radius: 0px;
+  color: white !important;
+  transform:skew(-8deg);
+  padding: 5px;
+}
+.form-control {
+  border: none;
+  color: white !important;
+  text-transform: uppercase;
+  font-style: italic;
+}
