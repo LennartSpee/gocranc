@@ -10,7 +10,6 @@
     </div>
   </div>
 </div>
-
 <div class="mt-5 mx-5 cards content">
   <% @offers.each do |offer| %>
     <div class="card-category" style="background-image: url('<%= offer.photo.key.present? ? cl_image_path(offer.photo.key) : '' %>')">
