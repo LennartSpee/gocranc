@@ -9,10 +9,19 @@ class Offer < ApplicationRecord
   validates :description, presence: true
   validates :duration, presence: true
   validates :location, presence: true
-   include PgSearch::Model
-   pg_search_scope :search_by_title_and_location,
-     against: [ :title, :location ],
-     using: {
-       tsearch: { prefix: true }
-     }
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_location,
+    against: [ :title, :location ],
+    using: {
+      tsearch: { prefix: true }
+    }
+  enum sport: {
+    ski: 0,
+    climb: 1,
+    mountainbike: 2,
+    fly: 3,
+    surf: 4,
+    diving: 5,
+    moto: 6,
+  }
 end

@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: [:change_booking_status, :edit]
+
   def new
     @booking = Booking.new
     @offer = Offer.find(params[:offer_id])
@@ -26,8 +28,13 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
+  def change_booking_status
+    @booking.update(status: params[:response])
+
+    redirect_to my_offers_bookings_path
+  end
+
   def edit
-    @booking = Booking.find(params[:id])
   end
 
   def update
@@ -50,5 +57,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
