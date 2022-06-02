@@ -7,7 +7,7 @@
 <div class="mt-5 mx-5 cards content">
 <% @offers.each do |offer| %>
     <%= offer.title %>
-    <%= link_to 'See offer', offer_path(offer)%>
+    <%= link_to 'Show', offer_path(offer), class: "btn btn-accent mt-2" %>
 
 <% end %>
 </div>
