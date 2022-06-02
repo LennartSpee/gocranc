@@ -15,3 +15,15 @@ $headers-font: 'Noto Sans', sans-serif;
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 40px !important;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .btn-accent-big {
+    margin: 10px !important;
+  }
+}
