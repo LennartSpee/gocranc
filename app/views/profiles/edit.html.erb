@@ -1,17 +1,1 @@
-<%= simple_form_for( @profile ) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs" style="padding-left:15%; text-align:left;">
-        <%= f.input :name, required: true, autofocus: true %>
-        <%= f.input :phone, required: true, autofocus: true %>
-        <%= f.input :age, required: true, autofocus: true %>
-        <%= f.input :email, required: true %>
-        <%= f.input :address, required: true %>
-        <%= f.input :bio, required: true %>
-        <%= f.input :sports, required: true %>
-        <%= f.input :user_type, required: true %>
-      </div>
-
-      <div class="form-actions" style="padding-left:15%; padding-top:5%; text-align:left;">
-        <%= f.button :submit, "Submit" %><% end %>
-      </div>
+<%= render "form" %>
