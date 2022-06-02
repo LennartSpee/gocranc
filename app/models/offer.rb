@@ -1,6 +1,8 @@
 class Offer < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_many :offer_sports
+  has_many :sports, through: :offer_sports
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
   has_one_attached :photo
@@ -15,13 +17,4 @@ class Offer < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-  enum sport: {
-    ski: 0,
-    climb: 1,
-    mountainbike: 2,
-    fly: 3,
-    surf: 4,
-    diving: 5,
-    moto: 6,
-  }
 end
