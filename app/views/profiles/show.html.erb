@@ -1,11 +1,9 @@
-|My Profile|
-<%= simple_form_for @profile do |f| %>
-  <%= f.input :name %>
-  <%= f.input :phone %>
-  <%= f.input :age %>
-  <%= f.input :address %>
-  <%= f.input :bio %>
-  <%= f.input :sports, as: :check_boxes %>
-  <%= f.input :user_type, :collection => %w[User Guide] %>
-  <%= f.button :submit, 'Save', class: "btn btn-primary" %>
- <% end %>
+<h1>My profile</h1><br>
+
+<h1><%= @profile.name %></h1>
+<h3><%= @profile.phone %></h3>
+<h3><%= @profile.age %></h3>
+<h3><%= @profile.bio %></h3>
+<h3><%= @profile.sports %></h3>
+<h3><%= @profile.address %></h3>
+<h3><%= @profile.user_type %></h3>
