@@ -15,12 +15,29 @@
   padding: 0.1rem 0.5rem;
   background-color: #ECEAFF;
   color: white;
-  border: 1px solid #7E73FF;
+  border: 1px solid #c933c9;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }
 
 .tag-selector:checked + label {
-  background-color: #7E73FF;
+  background-color: #c933c9;
   color: white;
+}
+
+.form-container {
+  width: 35vw;
+
+}
+
+.form-label {
+  color: white;
+}
+
+.form-control{
+  width: 210px;
+}
+
+.form-check-input{
+background:#c933c9
 }

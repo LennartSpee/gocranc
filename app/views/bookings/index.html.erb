@@ -20,7 +20,7 @@
       <td><%= booking.end_date %></td>
       <td><%= booking.created_at.day%>-<%= booking.created_at.month%>-<%= booking.created_at.year %></td>
       <td><%= link_to 'Edit', edit_booking_path(booking.id), class: "btn btn-accent" %></td>
-      <td><%= link_to 'Delete', booking_path(booking), method: :delete, data:{confirm: "Are you sure?"} %></td>
+      <td><%= link_to 'Delete', booking_path(booking), method: :delete, data:{confirm: "Are you sure?"}, class: "btn btn-accent" %></td>
     </tr>
       <% end %>
   </tbody>

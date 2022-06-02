@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   get 'guides', to: 'pages#guides'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  get '/profiles/edit', to: "profiles#edit", as: :edit_profile
   resources :profiles, only: [:show, :update, :create, :new, :index]
   get '/show_profile', to: "my_profile#show", as: :show_profile
-  get '/profiles/edit', to: "profiles#edit", as: :edit_profile
+
   resources :offers do
     resources :bookings, only: [:create, :new, :edit, :update, :destroy]
     resources :reviews, only: :create
