@@ -70,6 +70,14 @@ class OffersController < ApplicationController
     end
   end
 
+  def sports
+    if params[:query].present?
+      @offers = Sport.find_by(name: params[:query]).offers
+    else
+      @offers = Offer.all
+    end
+  end
+
   def destroy
     @offer = Offer.find(params[:id])
     @offer.destroy
