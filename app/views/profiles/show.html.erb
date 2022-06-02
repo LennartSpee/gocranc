@@ -1,11 +1,25 @@
-|My Profile|
-<%= simple_form_for @profile do |f| %>
-  <%= f.input :name %>
-  <%= f.input :phone %>
-  <%= f.input :age %>
-  <%= f.input :address %>
-  <%= f.input :bio %>
-  <%= f.input :sports, collection: ["Surf", "Hiking", "Snowboard", "Windsurf", "Ski"], as: :check_boxes, input_html: { class: "toggle" }  %>
-  <%= f.input :user_type, :collection => %w[User Guide] %>
-  <%= f.button :submit, 'Save', class: "btn btn-accent" %>
- <% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-sm-8">
+      <div class="form-profile">
+        <h2>My Profile</h2>
+        <%= simple_form_for @profile do |f| %>
+          <div class="form-inputs" style="padding-left:15%; text-align:left; padding-right:15%; padding-top:5%;">
+            <%= f.input :name, required: false, autofocus: true, class:"transp-input" %>
+            <%= f.input :phone, required: false, autofocus: true, class:"transp-input" %>
+            <%= f.input :age, required: false, autofocus: true, class:"transp-input" %>
+            <%= f.input :address, required: false, class:"transp-input" %>
+            <%= f.input :bio, required: false, class:"transp-input" %>
+            <div class="sports-flex">
+              <%= f.input :sports, required: false, collection: ["Surf", "Hiking", "Snowboard", "Windsurf", "Ski"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
+            </div>
+            <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_blank: false, include_hidden: false, input_html: { class:"transp-input"} %>
+          </div>
+          <div class="form-inputs" style="padding-left:15%; padding-right:15%;">
+            <%= f.button :submit, 'Save', class: "btn btn-accent" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
