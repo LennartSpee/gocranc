@@ -1,5 +1,5 @@
 <div class="mt-5 mx-5">
-<h1 class="text-center">Create a new offer</h1>
+<h1 class="text-center">Create a new adventure</h1>
 <ul>
 <%= simple_form_for [ @offer ] do |f| %>
   <%= f.input :photo, as: :file %>
@@ -10,7 +10,7 @@
   <%= f.input :location,
               input_html: { data: { geocoder_target: "location" }, class: "d-none" },
               wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= f.button :submit, class: "btn btn-accent" %>
 <% end %>
 <div class="pt-5 center"><%= link_to 'Back to list page', root_path, class: "btn btn-accent" %></div>
 </div>

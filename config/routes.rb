@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
   end
   resources :bookings, only: [:show, :edit, :update, :destroy, :index]
+
+  post "bookings/:id/:response", to: "bookings#change_booking_status", as: "change_booking_status"
   get '/my_bookings', to: "bookings#my_bookings"
   get '/my_offers_bookings', to: "bookings#my_offers_bookings"
   get '/my_offers', to: "offers#my_offers"

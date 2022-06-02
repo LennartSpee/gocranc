@@ -8,8 +8,9 @@
         <%= f.input :age, required: true, autofocus: true %>
         <%= f.input :address, required: true %>
         <%= f.input :bio, required: true %>
-        <%= f.input :sports, required: true %>
-        <%= f.input :user_type, required: true %>
+        <%= f.input :sports, collection: ["Surf", "Hiking", "Snowboard", "Windsurf", "Ski"], include_hidden:false, as: :check_boxes, input_html: { class: "toggle" }  %>
+        <%= f.input :user_type, collection: ["User", "Guide"]%>
       </div>
-
-        <%= f.button :submit, "Submit" %><% end %>
+  <div class="form-inputs" style="padding-left:15%; padding-right:15%;">
+        <%= f.button :submit, "Submit", class: "btn btn-primary" %> <% end %>
+</div>
