@@ -5,18 +5,30 @@
   data-mapbox-markers-value="<%= @markers.to_json %>" data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 <div class="mt-5 mx-5">
+<table class="table shadow p-5 bg-black rounded" style="color:white;">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Starting Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Booking created</th>
+      <th scope="col">Actions</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
   <% @bookings.each do |booking| %>
-      <tr>
+    <tr>
       <th scope="row"><%= booking.offer.title%></th>
       <td><%= booking.start_date %></td>
       <td><%= booking.end_date %></td>
+      <td><%= booking.status %></td>
       <td><%= booking.created_at.day%>-<%= booking.created_at.month%>-<%= booking.created_at.year %></td>
-      <td><%= link_to 'Accept', "destroy_booking_path(booking.id)", class: "btn btn-accent" %><%= link_to 'Deny', "#", class: "btn btn-accent" %></td>
-      </tr>
-
-      <div>
-        <%= booking.start_date %>
-        <%# <%= link_to 'See offer', offer_path(offer)%>
-      </div>
-  <% end %>
+      <td><%= link_to "Accept", change_booking_status_path(id: booking.id, response: :accepted), method: :post, class: "btn btn-accent" %></td>
+      <td><%= link_to "Decline", change_booking_status_path(id: booking.id, response: :declined), method: :post, data:{confirm: "Are you sure?"}, class: "btn btn-accent" %></td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
 </div>
