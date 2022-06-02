@@ -1,0 +1,28 @@
+.checkbox {
+  position: absolute;
+  transform: scale(0);
+  display: flex;
+}
+
+.checkbox + label {
+  cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 10px;
+  border-radius: 35px;
+}
+
+.checkbox:checked + label {
+  background: rgba(255,255,255,0.25);
+  border:2px solid white;
+}
+
+.sports-flex {
+  fieldset {
+    display: flex;
+    flex-wrap:wrap;
+  }
+}
+
+.col-form-label {
+  flex:0 0 100%;
+}
