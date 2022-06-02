@@ -72,7 +72,7 @@ class OffersController < ApplicationController
 
   def sports
     if params[:query].present?
-      @offers = Offer.where(sports: params[:query])
+      @offers = Sport.find_by(name: params[:query]).offers
     else
       @offers = Offer.all
     end
