@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def index
-    @profiles = Profile.where.not(user: current_user)
+    @profiles = Profile.where.not(user: current_user).where(user_type: "Guide")
   end
 
   def new

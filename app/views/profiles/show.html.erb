@@ -8,14 +8,14 @@
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" width="250" height="250" />
     <% end %>
     </div>
-    <div class="col-8">
-      <h1>Name: <%= @profile.name %></h1>
-      <h3>Phone: <%= @profile.phone %></h3>
-      <h3>Age: <%= @profile.age %></h3>
-      <h3><%= @profile.bio %></h3>
-      <h3>Interested in sports: <%= @profile.sports %></h3>
-      <h3>Located: <%= @profile.address %></h3>
-      <%# <%= @profile.user_type %>
+    <div class="col-8" style="overflow-wrap: break-word;">
+      <h2 style="border-bottom: 1px solid white;">Name: <%= @profile.name %></h2>
+      <p style="border-bottom: 1px solid white;">Age: <%= @profile.age %></p>
+      <p style="border-bottom: 1px solid white;"><%= @profile.bio %></p>
+      <p style="border-bottom: 1px solid white;">Interested in sports: <%= @profile.sports %></p>
+      <p style="border-bottom: 1px solid white;">Located: <%= @profile.address %></p>
+      <p style="border-bottom: 1px solid white;">Phone: <%= @profile.phone %></p>
+      <p style="border-bottom: 1px solid white;"><%= @profile.user_type %></p>
     </div>
   </div>
 </div>
