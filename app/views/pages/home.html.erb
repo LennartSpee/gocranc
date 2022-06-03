@@ -5,7 +5,11 @@
       <br>
       <p style="text-transform: uppercase; font-style: italic;">“If you want to go fast, go alone - <br> if you want to go far go together”</p>
       <br>
+      <% if current_user.present? %>
+      <%= link_to "About", "/about", class: "btn btn-accent-big" %>
+      <% else %>
       <%= link_to "REGISTER NOW", new_user_session_path, class: "btn btn-accent-big" %>
+      <% end %>
       <a class="btn btn-accent-big" href="#sports">VIEW SPORTS</a>
     </div>
   </div>
