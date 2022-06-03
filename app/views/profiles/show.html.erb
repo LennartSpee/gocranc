@@ -1,3 +1,22 @@
+<h1>My profile</h1><br>
+<div class="mt-5 mx-5 d-flex justify-content-between col-6">
+    <% if @profile.photo.key %>
+      <%= cl_image_tag @profile.photo.key, height: 250, crop: :fill, class: "rounded-circle" %>
+    <% else %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", class="rounded-circle" />
+    <% end %>
+    <div class="profile-info ml-3">
+      <div class ="d-flex justify-content-between">
+        <p><%= @profile.name %></p>
+        <%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %>
+      </div>
+      <p><%= @profile.phone %></p>
+      <p><%= @profile.age %></p>
+      <p><%= @profile.bio %></p>
+      <p><%= @profile.sports %></p>
+      <p><%= @profile.address %></p>
+      <p><%= @profile.user_type %></p>
+    </div>
 <div class="m-5">
 <h1>My profile <%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %> </h1>
   <div class="row p-3">
