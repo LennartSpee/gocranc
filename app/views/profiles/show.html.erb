@@ -1,40 +1,25 @@
-<h1>My profile</h1><br>
-<div class="mt-5 mx-5 d-flex justify-content-between col-6">
-    <% if @profile.photo.key %>
-      <%= cl_image_tag @profile.photo.key, height: 250, crop: :fill, class: "rounded-circle" %>
-    <% else %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", class="rounded-circle" />
-    <% end %>
-    <div class="profile-info ml-3">
-      <div class ="d-flex justify-content-between">
-        <p><%= @profile.name %></p>
-        <%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %>
-      </div>
-      <p><%= @profile.phone %></p>
-      <p><%= @profile.age %></p>
-      <p><%= @profile.bio %></p>
-      <p><%= @profile.sports %></p>
-      <p><%= @profile.address %></p>
-      <p><%= @profile.user_type %></p>
-    </div>
 <div class="m-5">
-<h1>My profile <%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %> </h1>
   <div class="row p-3">
     <div class="col">
+    <h1>My profile <%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %> </h1>
     <% if @profile.photo.key %>
-    <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill %>
+    <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill, class: "rounded-circle" %>
     <% else %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" width="250" height="250" />
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="profile_pic"/>
     <% end %>
     </div>
     <div class="col-8" style="overflow-wrap: break-word;">
-      <h2 style="border-bottom: 1px solid white;">Name: <%= @profile.name %></h2>
-      <p style="border-bottom: 1px solid white;">Age: <%= @profile.age %></p>
-      <p style="border-bottom: 1px solid white;"><%= @profile.bio %></p>
-      <p style="border-bottom: 1px solid white;">Interested in sports: <%= @profile.sports %></p>
-      <p style="border-bottom: 1px solid white;">Located: <%= @profile.address %></p>
-      <p style="border-bottom: 1px solid white;">Phone: <%= @profile.phone %></p>
-      <p style="border-bottom: 1px solid white;"><%= @profile.user_type %></p>
+      <h2 style="border-bottom: 1px solid white; text-transform:uppercase; padding: 5px;">Name: <%= @profile.name %></h2>
+      <p style="border-bottom: 1px solid white; text-transform:uppercase;padding: 5px;">Age: <%= @profile.age %></p>
+      <p style="border-bottom: 1px solid white; text-transform:uppercase;padding: 5px;">Biographie: <%= @profile.bio %></p>
+      <p style="border-bottom: 1px solid white; text-transform:uppercase;padding: 5px;">Interested in sports: <% @profile.sports[0..-2].each do |sport|%>
+      <%= sport %>, <% end %> <%= @profile.sports.last %>
+      </p>
+      <p style="border-bottom: 1px solid white; text-transform:uppercase;padding: 5px;">Favorite Places: <%= @profile.favorite_places %></p>
+      <p style="border-bottom: 1px solid white; text-transform:uppercase;padding: 5px;">Social Media: <%= @profile.social_medias %></p>
+      <p style="border-bottom: 1px solid white; text-transform:uppercase;padding: 5px;">Located: <%= @profile.address %></p>
+      <p style="border-bottom: 1px solid white; text-transform:uppercase;padding: 5px;">Phone: <%= @profile.phone %></p>
+      <p style="border-bottom: 1px solid white; text-transform:uppercase;padding: 5px;">Profile Type: <%= @profile.user_type %></p>
     </div>
   </div>
 </div>
