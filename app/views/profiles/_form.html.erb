@@ -10,15 +10,16 @@
         <%= f.input :name, required: false, autofocus: true, class:"transp-input" %>
         <%= f.input :phone, required: false, autofocus: true, class:"transp-input" %>
         <%= f.input :age, required: false, autofocus: true, class:"transp-input" %>
+        <%= f.input :favorite_places, required: false, autofocus: true, class:"transp-input" %>
+        <%= f.input :social_medias, required: false, autofocus: true, class:"transp-input" %>
         <%= f.input :address, required: false, class:"transp-input" %>
         <%= f.input :bio, required: false, class:"transp-input" %>
         <div class="sports-flex">
           <%= f.input :sports, required: false, collection: ["Surf", "Hiking", "Snowboard", "Windsurf", "Ski"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
         </div>
-        <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: { class:"transp-input"} %>
-      </div>
-    <div class="form-inputs" style="padding-left:15%; padding-right:15%;">
+        <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: {class:"transp-input"} %>
         <%= f.button :submit, "Submit", class: "btn btn-accent" %> <% end %>
+        </div>
         </div>
       </div>
     </div>
