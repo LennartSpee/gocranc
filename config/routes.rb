@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show, :edit, :update, :destroy, :index]
 
+  resources :chatrooms, only: [:show, :create] do
+    resources :messages, only: [:create]
+  end
+
   post "bookings/:id/:response", to: "bookings#change_booking_status", as: "change_booking_status"
   get '/my_bookings', to: "bookings#my_bookings"
   get '/my_offers_bookings', to: "bookings#my_offers_bookings"
