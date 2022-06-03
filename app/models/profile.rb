@@ -4,10 +4,7 @@ class Profile < ApplicationRecord
   validates :phone, presence: true
   validates :age, presence: true
   validates :bio, length: { minimum: 20 }, presence: true
-  validates :sports, presence: true
   validates :address, presence: true
   validates :user_type, presence: true
-  validates :social_medias, presence: true
-  validates :favorite_places, presence: true
   has_one_attached :photo
 end
