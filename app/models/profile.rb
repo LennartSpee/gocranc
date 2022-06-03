@@ -7,4 +7,5 @@ class Profile < ApplicationRecord
   validates :sports, presence: true
   validates :address, presence: true
   validates :user_type, presence: true
+  has_one_attached :photo
 end
