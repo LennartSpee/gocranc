@@ -3,7 +3,7 @@
     <div class="mt-5 col-8">
         <h1>We connect extreme athletes with foreign locals</h1>
       <br>
-      <p style="text-transform: uppercase; font-style: italic;">“If you want to go fast, go alone - if you want to go far go together”</p>
+      <p style="text-transform: uppercase; font-style: italic;">“If you want to go fast, go alone - <br> if you want to go far go together”</p>
       <br>
       <%= link_to "REGISTER NOW", new_user_session_path, class: "btn btn-accent-big" %>
       <a class="btn btn-accent-big" href="#sports">VIEW SPORTS</a>
@@ -16,7 +16,7 @@
   <% @sports.each do |sport| %>
       <div class="card-category" style="background-image: url('<%= sport.photo.key.present? ? cl_image_path(sport.photo.key) : '' %>')">
         <%= sport.name %>
-        <%= link_to 'Show', sports_offers_path(query: sport.name) %>
+        <%= link_to 'Click here', sports_offers_path(query: sport.name) %>
       </div>
   <% end %>
 </div>
@@ -24,13 +24,13 @@
 <div class="banner align-middle">
   <div class="m-5">
     <div class="row">
-      <div class="col-6">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-sm-12 p-3">
         <img class="featured-img" src="https://brunswickdowntown.org/wp-content/uploads/2020/06/tennis-lesson.jpg" alt="">
       </div>
-      <div class="col-6">
-      <h2>We connect extreme athletes with foreign locals</h2>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-sm-12">
+      <h2>Register now for your next trip</h2>
         <br>
-      <p> Learn and develop any skill. Connect with our members and start learning today.</p>
+      <p>Made for you, free to use, exciting to discover. Join now for more Insights. </p>
         <br>
     <a class="btn btn-accent-big" href="#">REGISTER NOW</a>
       </div>
