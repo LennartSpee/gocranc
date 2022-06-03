@@ -16,13 +16,9 @@ Sport.destroy_all
 
 p "DB clean"
 
-user_1 = User.create!(email: 'johndoe@gmail.com', password: "123456")
-user_2 = User.create!(email: 'jsmith@gmail.com', password: "123456")
-user_3 = User.create!(email: 'johblack@gmail.com', password: "123456")
-user_4 = User.create!(email: 'johnwhite@gmail.com', password: "123456")
-user_5 = User.create!(email: 'johnpink@gmail.com', password: "123456")
-user_6 = User.create!(email: 'johnyellow@gmail.com', password: "123456")
-
+6.times do
+  User.create!(email: Faker::Internet.email, password: "123456")
+end
 
 p "user seeded"
 
@@ -75,3 +71,40 @@ offer = Offer.create!(title: 'Moto', price: '50', duration: '30', description: '
 OfferSport.create(offer: offer, sport: Sport.find_by(name: "Moto"))
 
 p "Offers"
+
+User.all.each do |user|
+  Profile.create!(
+    user: user,
+    name: Faker::Name.name,
+    phone: Faker::PhoneNumber.cell_phone_in_e164,
+    age: rand(18..99),
+    bio: Faker::Hipster.sentence(word_count: 10),
+    address: Faker::Address.street_address,
+    user_type: ["User", "Guide"].sample
+  )
+end
+
+profile1 = Sport.new(name: "Skiing")
+file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
+profile1.photo.attach(io: file, filename: 'ski.jpg', content_type: 'image/jpg')
+profile1.save
+profile2 = Sport.new(name: "Climbing")
+file = URI.open('https://img.redbull.com/images/c_crop,w_5122,h_2561,x_0,y_2956,f_auto,q_auto/c_scale,w_1200/redbullcom/2019/06/03/83ddcec2-b607-4def-a965-abb0b94fa412/how-to-take-indoor-climbing-outdoors')
+profile2.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
+profile2.save
+profile3 = Sport.new(name: "Biking")
+file = URI.open('https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dw87df4949/images/plp/Mountain/Sender/ridestyle-downhill-canyon-sender-01.jpg?sw=1920')
+profile3.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
+profile3.save
+profile4 = Sport.new(name: "Flying")
+file = URI.open('http://upload.wikimedia.org/wikipedia/commons/9/9b/Ocean_Wingsuit_Formation_%286366966219%29.jpg')
+profile4.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
+profile4.save
+profile5 = Sport.new(name: "Surfing")
+file = URI.open('https://www.boardsportsource.com/wp-content/uploads/2021/07/Mikey-February-by-Alan-Van-Gysen.jpg')
+profile5.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
+profile5.save
+profile6 = Sport.new(name: "Diving")
+file = URI.open('https://www.seabookings.com/blog/wp-content/uploads/2016/06/Coasteering-Red-Bull.jpg')
+profile6.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
+profile6.save
