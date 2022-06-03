@@ -5,7 +5,7 @@
 <%= simple_form_for [ @offer ] do |f| %>
   <%= f.input :photo, as: :file %>
   <%= f.input :price %>
-  <%= f.input :duration %>
+  <%= f.input :duration, label: 'Duration in hours'%>
   <%= f.input :description %>
   <%= f.input :title %>
   <%= f.input :location %>
