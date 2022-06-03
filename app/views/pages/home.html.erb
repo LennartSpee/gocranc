@@ -8,7 +8,7 @@
       <% if current_user.present? %>
       <%= link_to "About", "/about", class: "btn btn-accent-big" %>
       <% else %>
-      <%= link_to "REGISTER NOW", new_user_session_path, class: "btn btn-accent-big" %>
+      <%= link_to "REGISTER NOW", new_user_registration_path, class: "btn btn-accent-big" %>
       <% end %>
       <a class="btn btn-accent-big" href="#sports">VIEW SPORTS</a>
     </div>
