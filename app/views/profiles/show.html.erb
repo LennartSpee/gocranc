@@ -1,18 +1,20 @@
 <h1>My profile</h1><br>
-<div class="mt-5 mx-5">
+<div class="mt-5 mx-5 d-flex justify-content-between col-6">
     <% if @profile.photo.key %>
-      <%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @profile.photo.key, height: 250, crop: :fill, class: "rounded-circle" %>
     <% else %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", class="rounded-circle" />
     <% end %>
-<h1><%= @profile.name %></h1>
-<h3><%= @profile.phone %></h3>
-<h3><%= @profile.age %></h3>
-<h3><%= @profile.bio %></h3>
-<h3><%= @profile.sports %></h3>
-<h3><%= @profile.address %></h3>
-<h3><%= @profile.user_type %></h3>
-
-<%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %>
-
+    <div class="profile-info ml-3">
+      <div class ="d-flex justify-content-between">
+        <p><%= @profile.name %></p>
+        <%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %>
+      </div>
+      <p><%= @profile.phone %></p>
+      <p><%= @profile.age %></p>
+      <p><%= @profile.bio %></p>
+      <p><%= @profile.sports %></p>
+      <p><%= @profile.address %></p>
+      <p><%= @profile.user_type %></p>
+    </div>
 </div>

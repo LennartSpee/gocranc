@@ -4,7 +4,7 @@
 
 <div class="mt-5 mx-5 cards content">
   <% @profiles.each do |profile| %>
-    <div class="card-category" style="background-image: url('<%= profile.photo.key.present? ? cl_image_path(offer.photo.key) : '' %>')">
+    <div class="card-category" style="background-image: url('<%= profile.photo.key.present? ? cl_image_path(profile.photo.key) : '' %>')">
         <%= profile.name %>
         <%= profile.address %>
         <%= profile.sports %>
