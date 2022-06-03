@@ -1,3 +1,22 @@
+<h1>My profile</h1><br>
+<div class="mt-5 mx-5 d-flex justify-content-between col-6">
+    <% if @profile.photo.key %>
+      <%= cl_image_tag @profile.photo.key, height: 250, crop: :fill, class: "rounded-circle" %>
+    <% else %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", class="rounded-circle" />
+    <% end %>
+    <div class="profile-info ml-3">
+      <div class ="d-flex justify-content-between">
+        <p><%= @profile.name %></p>
+        <%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %>
+      </div>
+      <p><%= @profile.phone %></p>
+      <p><%= @profile.age %></p>
+      <p><%= @profile.bio %></p>
+      <p><%= @profile.sports %></p>
+      <p><%= @profile.address %></p>
+      <p><%= @profile.user_type %></p>
+    </div>
 <div class="m-5">
 <h1>My profile <%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %> </h1>
   <div class="row p-3">
@@ -8,14 +27,14 @@
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" width="250" height="250" />
     <% end %>
     </div>
-    <div class="col-8">
-      <h1>Name: <%= @profile.name %></h1>
-      <h3>Phone: <%= @profile.phone %></h3>
-      <h3>Age: <%= @profile.age %></h3>
-      <h3><%= @profile.bio %></h3>
-      <h3>Interested in sports: <%= @profile.sports %></h3>
-      <h3>Located: <%= @profile.address %></h3>
-      <%# <%= @profile.user_type %>
+    <div class="col-8" style="overflow-wrap: break-word;">
+      <h2 style="border-bottom: 1px solid white;">Name: <%= @profile.name %></h2>
+      <p style="border-bottom: 1px solid white;">Age: <%= @profile.age %></p>
+      <p style="border-bottom: 1px solid white;"><%= @profile.bio %></p>
+      <p style="border-bottom: 1px solid white;">Interested in sports: <%= @profile.sports %></p>
+      <p style="border-bottom: 1px solid white;">Located: <%= @profile.address %></p>
+      <p style="border-bottom: 1px solid white;">Phone: <%= @profile.phone %></p>
+      <p style="border-bottom: 1px solid white;"><%= @profile.user_type %></p>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def index
-    @profiles = Profile.where.not(user: current_user)
+    @profiles = Profile.where.not(user: current_user).where(user_type: "Guide")
   end
 
   def new
@@ -49,6 +49,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:photo, :name, :phone, :age, :address, :bio, :user_type, sports: [])
+    params.require(:profile).permit(:photo, :favorite_places, :social_medias, :name, :phone, :age, :address, :bio, :user_type, sports: [])
   end
 end

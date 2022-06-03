@@ -28,14 +28,10 @@ p "user seeded"
 
 # sports = ["Skiing", "Climbing", "Biking", "Flying", "Surfing", "Diving", "Moto"]
 sport1 = Sport.new(name: "Skiing")
-p sport1
 file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
 sport1.photo.attach(io: file, filename: 'ski.jpg', content_type: 'image/jpg')
-p sport1.photo
 sport1.save
-p sport1
 sport2 = Sport.new(name: "Climbing")
-p sport2
 file = URI.open('https://img.redbull.com/images/c_crop,w_5122,h_2561,x_0,y_2956,f_auto,q_auto/c_scale,w_1200/redbullcom/2019/06/03/83ddcec2-b607-4def-a965-abb0b94fa412/how-to-take-indoor-climbing-outdoors')
 sport2.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 sport2.save
@@ -43,7 +39,6 @@ sport3 = Sport.new(name: "Biking")
 file = URI.open('https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dw87df4949/images/plp/Mountain/Sender/ridestyle-downhill-canyon-sender-01.jpg?sw=1920')
 sport3.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 sport3.save
-
 sport4 = Sport.new(name: "Flying")
 file = URI.open('http://upload.wikimedia.org/wikipedia/commons/9/9b/Ocean_Wingsuit_Formation_%286366966219%29.jpg')
 sport4.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
@@ -53,11 +48,11 @@ file = URI.open('https://www.boardsportsource.com/wp-content/uploads/2021/07/Mik
 sport5.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 sport5.save
 sport6 = Sport.new(name: "Diving")
-file = URI.open('https://www.seabookings.com/blog/wp-content/uploads/2016/06/Coasteering-Red-Bull.jpghttps://www.rei.com/blog/wp-content/uploads/sites/4/2019/04/El-Chalten-by-Silvestre-Seree.jpg')
+file = URI.open('https://www.seabookings.com/blog/wp-content/uploads/2016/06/Coasteering-Red-Bull.jpg')
 sport6.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 sport6.save
 sport7 = Sport.new(name: "Moto")
-file = URI.open('https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2015/04/15/1331717111521_3/james-stewart-a-praticar-na-sua-pista')
+file = URI.open('https://racemotor.com.br/wp-content/uploads/2021/09/SI202109190758.jpg')
 sport7.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 sport7.save
 
