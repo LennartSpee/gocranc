@@ -18,6 +18,7 @@ class OffersController < ApplicationController
   end
 
   def show
+    @chatroom = Chatroom.all.last
     @offer = Offer.find(params[:id])
     @review = Review.new
     @offers = current_user.offers

@@ -28,6 +28,7 @@
   <%= link_to 'Back', offers_path, class: "btn-lg btn-accent" %>
   <% if     @offer.user == current_user %>
     <%= link_to 'Chat with user', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
+    <%= link_to 'Go to last conversations', chatroom_path(@chatroom), class: "btn-lg btn-accent" %>
     <%= link_to 'Edit', edit_offer_path, class: "btn-lg btn-accent" %>
     <%= link_to 'Delete', offer_path(@offer), method: :delete,  class: "btn-lg btn-accent" %>
     <%= link_to 'See Bookings', my_offers_bookings_path, class: "btn-lg btn-accent" %>
@@ -35,6 +36,7 @@
 
     <%= link_to 'New booking for this offer', new_offer_booking_path(@offer), class: "btn-lg btn-accent" %>
     <%= link_to 'Chat with Guide', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
+    <%= link_to 'Go to last conversations', chatroom_path(@chatroom), class: "btn-lg btn-accent" %>
 
   <% end %>
 </div>
