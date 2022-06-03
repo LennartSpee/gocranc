@@ -1,5 +1,10 @@
 <h1>My profile</h1><br>
-
+<div class="mt-5 mx-5">
+    <% if @profile.photo.key %>
+      <%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% end %>
 <h1><%= @profile.name %></h1>
 <h3><%= @profile.phone %></h3>
 <h3><%= @profile.age %></h3>
@@ -9,3 +14,5 @@
 <h3><%= @profile.user_type %></h3>
 
 <%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %>
+
+</div>

@@ -6,6 +6,7 @@
 <%= simple_form_for(@profile) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs" style="padding-left:15%; text-align:left; padding-right:15%; padding-top:5%;">
+        <%= f.input :photo, as: :file %>
         <%= f.input :name, required: false, autofocus: true, class:"transp-input" %>
         <%= f.input :phone, required: false, autofocus: true, class:"transp-input" %>
         <%= f.input :age, required: false, autofocus: true, class:"transp-input" %>
