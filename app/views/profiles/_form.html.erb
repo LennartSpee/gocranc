@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8 col-sm-8">
-      <div class="form-profile">
+      <%# <div class="form-profile"> %>
         <h2>Edit your profile</h2>
         <%= simple_form_for(@profile) do |f| %>
           <%= f.error_notification %>
-          <div class="form-inputs" style="padding-left:15%; text-align:left; padding-right:15%; padding-top:5%;">
+          <div class="form-inputs">
             <%= f.input :photo, as: :file %>
             <%= f.input :name, required: false, autofocus: true, class:"transp-input" %>
             <%= f.input :phone, required: false, autofocus: true, class:"transp-input" %>
@@ -15,13 +15,14 @@
             <%= f.input :address, required: false, class:"transp-input" %>
             <%= f.input :bio, required: false, class:"transp-input" %>
             <div class="sports-flex">
-              <%= f.input :sports, required: false, collection: ["Surf", "Hiking", "Snowboard", "Windsurf", "Ski"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
-            <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: {class:"transp-input"} %>
+            <%= f.input :sports, required: false, collection: ["Surf", "Hiking", "Snowboard", "Windsurf", "Ski"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
+            <%# <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: {class:"transp-input"} %>
+            <%= f.input :user_type, required: false, collection: ["Guide"], as: :check_boxes, label: 'Are you planning to guide people?'%>
             </div>
             <%= f.button :submit, "Submit", class: "btn btn-accent" %>
           </div>
         <% end %>
-      </div>
+      <%# </div> %>
     </div>
   </div>
 </div>

@@ -1,9 +1,12 @@
 <div class="flex-item">
   <div class="mt-5 mx-5 card-trip">
+  <div class="mb-3">
+    <%= link_to 'Back', offers_path, class: "btn btn-accent" %>
+    </div>
     <% if @offer.photo.key %>
       <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
     <% else %>
-      <%= image_tag "user.png", alt: "user_getcrank.io", height: 250, width: 250%>
+      <%= image_tag "offer.png", alt: "offer", height: 250, width: 250%>
     <% end %>
     <div class="card-trip-infos">
       <div>
@@ -11,7 +14,7 @@
         <strong><%= @offer.description %></strong>
       </div>
       <h3><%= @offer.price %> €</h3>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <%= image_tag "avatar.png", class: "card-trip-user avatar-bordered" %>
     </div>
     <div class="card-trip-infos d-flex justify-content-start">
       <h5>Duration: <%= @offer.duration %> | </h5>
@@ -19,17 +22,19 @@
     </div>
   </div>
 </div>
+<% if     @offer.user == current_user %>
+    <% else %>
 <div class="mt-5 mx-5">
   <div style="width: 100%; height: 400px;" data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>" data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+    <% end %>
 <div class="container">
- <div class="mt-5 mb-5 mx-5 footer">
-    <%= link_to 'Back', offers_path, class: "btn-lg btn-accent" %>
+ <div class="mt-5 mb-5 mx-5 button-bottom">
     <% if     @offer.user == current_user %>
-      <%= link_to 'Chat with user', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
-      <%= link_to 'Go to last conversations', chatroom_path(@chatroom), class: "btn-lg btn-accent" %>
+      <%= link_to 'Chat', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
+      <%# <%= link_to 'Go to last conversations', chatroom_path(@chatroom), class: "btn-lg btn-accent" %>
       <%= link_to 'Edit', edit_offer_path, class: "btn-lg btn-accent" %>
       <%= link_to 'Delete', offer_path(@offer), method: :delete,  class: "btn-lg btn-accent" %>
       <%= link_to 'See Bookings', my_offers_bookings_path, class: "btn-lg btn-accent" %>
@@ -37,7 +42,7 @@
 
       <%= link_to 'New booking for this offer', new_offer_booking_path(@offer), class: "btn-lg btn-accent" %>
       <%= link_to 'Chat with Guide', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
-      <%= link_to 'Go to last conversations', chatrooms_path(@chatroom), class: "btn-lg btn-accent" %>
+      <%# <%= link_to 'Go to last conversations', chatrooms_path(@chatroom), class: "btn-lg btn-accent" %>
 
     <% end %>
   </div>

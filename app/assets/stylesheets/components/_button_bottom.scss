@@ -1,44 +1,44 @@
-.footer {
+.button-bottom {
   background: $black;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 100px;
   padding: 0px 40px;
   color: rgba(255, 255, 255, 0.938);
 }
-.footer-links {
+.button-bottom-links {
   display: flex;
   align-items: center;
 }
-.footer-links a {
+.button-bottom-links a {
   color: white;
   opacity: 0.8;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
-.footer-links a:hover {
+.button-bottom-links a:hover {
   color: $accent;
   transition: 0.5s;
   opacity: 1;
 }
-.footer .fa-heart {
+.button-bottom .fa-heart {
   color: white;
 }
 
-.mx-5.footer {
+.mx-5.button-bottom {
 position: relative;
 }
 
 @media only screen and (max-width: 600px) {
-  .footer {
+  .button-bottom {
     flex-direction: column;
     margin-top: 50px !important;
     padding: 3px;
     height: 100px;
   }
-  .footer .btn-accent{
+  .button-bottom .btn-accent{
     margin: 2px;
   }
 }

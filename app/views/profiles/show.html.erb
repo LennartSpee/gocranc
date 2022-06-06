@@ -5,7 +5,7 @@
     <% if @profile.photo.key %>
     <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill, class: "rounded-circle" %>
     <% else %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="profile_pic"/>
+      <%= image_tag "user.png", alt: "user_getcrank.io", height: 250, width: 250%>
     <% end %>
     </div>
     <div class="col-8" style="overflow-wrap: break-word;">
