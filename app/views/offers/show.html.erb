@@ -3,7 +3,7 @@
     <% if @offer.photo.key %>
       <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
     <% else %>
-      <%= image_tag "user.png", alt: "user_getcrank.io", height: 250, width: 250%>
+      <%= image_tag "offer.png", alt: "offer", height: 250, width: 250%>
     <% end %>
     <div class="card-trip-infos">
       <div>
