@@ -63,3 +63,41 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: bold;
 }
+
+
+/**slim banner**/
+.banner-slim-center {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.banner-slim-center-slim h1 {
+  text-align: center;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 70px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.banner-slim-center-slim h2 {
+  text-align: center;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.banner-slim-center p {
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+}

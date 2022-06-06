@@ -8,8 +8,9 @@
         <%= profile.photo.key %>
         <%# display profile image %>
         <%= profile.name %>
-        <%# location instead of adress %>
         <br>
+        <%= profile.address %>
+        <%# location instead of adress %>
         <br>
         <%= link_to 'See Guide', profile_path(profile), class: "btn btn-accent"%>
     </div>
