@@ -4,13 +4,8 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 50px;
+  padding: 0px 40px;
   color: rgba(255, 255, 255, 0.938);
-  position: relative;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   text-align: center;
 }
 .footer-links {
   display: flex;
@@ -32,6 +27,6 @@
   color: white;
 }
 
-.mt-5 .mb-5 .mx-5 .footer{
-  margin-bottom: 50%;
+.mx-5.footer {
+position: relative;
 }
