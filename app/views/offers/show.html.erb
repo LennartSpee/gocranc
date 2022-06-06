@@ -1,5 +1,8 @@
 <div class="flex-item">
   <div class="mt-5 mx-5 card-trip">
+  <div class="mb-3">
+    <%= link_to 'Back', offers_path, class: "btn btn-accent" %>
+    </div>
     <% if @offer.photo.key %>
       <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
     <% else %>
@@ -11,7 +14,7 @@
         <strong><%= @offer.description %></strong>
       </div>
       <h3><%= @offer.price %> €</h3>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <%= image_tag "avatar.png", class: "card-trip-user avatar-bordered" %>
     </div>
     <div class="card-trip-infos d-flex justify-content-start">
       <h5>Duration: <%= @offer.duration %> | </h5>
@@ -19,17 +22,49 @@
     </div>
   </div>
 </div>
+<% if     @offer.user == current_user %>
+
+<div class="mt-5 mx-5">
+<table class="table shadow p-5 bg-black rounded" style="color:white;">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Starting Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Booking created</th>
+      <th scope="col">Actions</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @bookings.each do |booking| %>
+    <tr>
+      <th scope="row"><%= booking.offer.title%></th>
+      <td><%= booking.start_date %></td>
+      <td><%= booking.end_date %></td>
+      <td><%= booking.status %></td>
+      <td><%= booking.created_at.day%>-<%= booking.created_at.month%>-<%= booking.created_at.year %></td>
+      <td><%= link_to "Accept", change_booking_status_path(id: booking.id, response: :accepted), method: :post, class: "btn btn-accent" %></td>
+      <td><%= link_to "Decline", change_booking_status_path(id: booking.id, response: :declined), method: :post, data:{confirm: "Are you sure?"}, class: "btn btn-accent" %></td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
+</div>
+
+    <% else %>
 <div class="mt-5 mx-5">
   <div style="width: 100%; height: 400px;" data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>" data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+    <% end %>
 <div class="container">
- <div class="mt-5 mb-5 mx-5 footer">
-    <%= link_to 'Back', offers_path, class: "btn-lg btn-accent" %>
+ <div class="mt-5 mb-5 mx-5 button-bottom">
     <% if     @offer.user == current_user %>
-      <%= link_to 'Chat with user', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
-      <%= link_to 'Go to last conversations', chatroom_path(@chatroom), class: "btn-lg btn-accent" %>
+      <%= link_to 'Chat', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
+      <%# <%= link_to 'Go to last conversations', chatroom_path(@chatroom), class: "btn-lg btn-accent" %>
       <%= link_to 'Edit', edit_offer_path, class: "btn-lg btn-accent" %>
       <%= link_to 'Delete', offer_path(@offer), method: :delete,  class: "btn-lg btn-accent" %>
       <%= link_to 'See Bookings', my_offers_bookings_path, class: "btn-lg btn-accent" %>
@@ -37,7 +72,7 @@
 
       <%= link_to 'New booking for this offer', new_offer_booking_path(@offer), class: "btn-lg btn-accent" %>
       <%= link_to 'Chat with Guide', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
-      <%= link_to 'Go to last conversations', chatrooms_path(@chatroom), class: "btn-lg btn-accent" %>
+      <%# <%= link_to 'Go to last conversations', chatrooms_path(@chatroom), class: "btn-lg btn-accent" %>
 
     <% end %>
   </div>
