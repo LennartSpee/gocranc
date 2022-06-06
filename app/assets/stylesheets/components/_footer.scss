@@ -6,7 +6,7 @@
   height: 100px;
   padding: 0px 50px;
   color: rgba(255, 255, 255, 0.938);
-  position: fixed;
+  position: relative;
    left: 0;
    bottom: 0;
    width: 100%;
@@ -30,4 +30,8 @@
 }
 .footer .fa-heart {
   color: white;
+}
+
+.mt-5 .mb-5 .mx-5 .footer{
+  margin-bottom: 50%;
 }
