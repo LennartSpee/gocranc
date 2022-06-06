@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/profiles/edit', to: "profiles#edit", as: :edit_profile
   resources :profiles, only: [:show, :update, :create, :new, :index]
-  get '/show_profile', to: "my_profile#show", as: :show_profile
+  get '/profile/:id', to: "profiles#show", as: :show_profile
 
   resources :offers do
     resources :bookings, only: [:create, :new, :edit, :update, :destroy]

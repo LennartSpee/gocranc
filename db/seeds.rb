@@ -11,6 +11,7 @@ OfferSport.destroy_all
 Booking.destroy_all
 Offer.delete_all
 Profile.destroy_all
+Message.destroy_all
 User.delete_all
 Sport.destroy_all
 
@@ -88,7 +89,7 @@ offer = Offer.create!(title: 'Skiing', price: '50', duration: '30',
 OfferSport.create(offer: offer, sport: Sport.find_by(name: "Skiing"))
 offer = Offer.create!(title: 'Climbing', price: '50', duration: '30', description: 'Control your body, control your mind', location: 'Lisbon', latitude: 38.722028, longitude: -9.139139, user: User.second)
 OfferSport.create(offer: offer, sport: Sport.find_by(name: "Climbing"))
-offer = Offer.create!(title: 'Biking', price: '50', duration: '30', description: 'Lord of the Rings', location: 'Lisbon', latitude: 38.722028, longitude: -9.139139, user: User.third)
+offer = Offer.create!(title: 'Biking', price: '50', duration: '30', description: 'Lord of the Rings', location: 'Lisbon', latitude: 38.722028, longitude: -10.139139, user: User.third)
 OfferSport.create(offer: offer, sport: Sport.find_by(name: "Biking"))
 offer = Offer.create!(title: 'Flying', price: '50', duration: '30', description: 'Learn scales and chords and play your favourite songs', location: 'Lisbon', latitude: 38.722028, longitude: -9.139139, user: User.fourth)
 OfferSport.create(offer: offer, sport: Sport.find_by(name: "Biking"))

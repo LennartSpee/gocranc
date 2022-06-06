@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :bookings, through: :offers
 
   has_many :chatrooms
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_one :profile
 end
