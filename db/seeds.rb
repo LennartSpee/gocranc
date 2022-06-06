@@ -139,7 +139,7 @@ offer = Offer.create!(
   title: 'Skiing',
   price: '50',
   duration: '30',
-  description: 'Learn how to stand up on a bord and catch your first waves',
+  description: 'Learn how to stand up on a bord and catch your firsrailst waves',
   location: 'Lisbon',
   latitude: 38.722028,
   longitude: -9.139139,
@@ -158,6 +158,7 @@ offer = Offer.create!(
   longitude: -9.139139,
   user: User.second
 )
+
 
 OfferSport.create(offer: offer, sport: Sport.find_by(name: "Climbing"))
 offer = Offer.create!(title: 'Biking', price: '50', duration: '30', description: 'Lord of the Rings', location: 'Lisbon', latitude: 38.722028, longitude: -10.139139, user: User.third)
