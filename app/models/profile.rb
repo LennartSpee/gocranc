@@ -6,5 +6,6 @@ class Profile < ApplicationRecord
   validates :bio, length: { minimum: 20 }, presence: true
   validates :address, presence: true
   validates :user_type, presence: true
+  #validates :social_medias_urls, presence: true
   has_one_attached :photo
 end
