@@ -113,27 +113,27 @@ User.all.each do |user|
   )
 end
 
-profile1 = Profile.new(name: "Skiing")
+profile1 = Sport.new(name: "Skiing")
 file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
 profile1.photo.attach(io: file, filename: 'ski.jpg', content_type: 'image/jpg')
 profile1.save
-profile2 = Profile.new(name: "Climbing")
+profile2 = Sport.new(name: "Climbing")
 file = URI.open('https://img.redbull.com/images/c_crop,w_5122,h_2561,x_0,y_2956,f_auto,q_auto/c_scale,w_1200/redbullcom/2019/06/03/83ddcec2-b607-4def-a965-abb0b94fa412/how-to-take-indoor-climbing-outdoors')
 profile2.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 profile2.save
-profile3 = Profile.new(name: "Biking")
+profile3 = Sport.new(name: "Biking")
 file = URI.open('https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dw87df4949/images/plp/Mountain/Sender/ridestyle-downhill-canyon-sender-01.jpg?sw=1920')
 profile3.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 profile3.save
-profile4 = Profile.new(name: "Flying")
+profile4 = Sport.new(name: "Flying")
 file = URI.open('http://upload.wikimedia.org/wikipedia/commons/9/9b/Ocean_Wingsuit_Formation_%286366966219%29.jpg')
 profile4.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 profile4.save
-profile5 = Profile.new(name: "Surfing")
+profile5 = Sport.new(name: "Surfing")
 file = URI.open('https://www.boardsportsource.com/wp-content/uploads/2021/07/Mikey-February-by-Alan-Van-Gysen.jpg')
 profile5.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 profile5.save
-profile6 = Profile.new(name: "Diving")
+profile6 = Sport.new(name: "Diving")
 file = URI.open('https://www.seabookings.com/blog/wp-content/uploads/2016/06/Coasteering-Red-Bull.jpg')
 profile6.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 profile6.save
