@@ -12,9 +12,11 @@
 </div>
 <div class="mt-5 mx-5 cards content">
   <% @offers.each do |offer| %>
+     <%= link_to offer_path(offer.id) do %>
+  <%#= link_to 'Show', offer_path(offer.id) do%>
     <div class="card-category" style="background-image: url('<%= offer.photo.key.present? ? cl_image_path(offer.photo.key) : '' %>')">
-      <%= offer.title %><%= link_to 'Show', offer_path(offer.id) %>
+      <%= offer.title %><%#= link_to 'Show', offer_path(offer.id) %>
     </div>
   <% end %>
+<% end %>
 </div>
-<br>
