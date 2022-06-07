@@ -45,10 +45,10 @@ file = URI.open('https://www.boardsportsource.com/wp-content/uploads/2021/07/Mik
 sport5.photo.attach(io: file, filename: 'surfing.jpg', content_type: 'image/jpg')
 sport5.save
 
-sport6 = Sport.new(name: "Diving")
-file = URI.open('https://www.seabookings.com/blog/wp-content/uploads/2016/06/Coasteering-Red-Bull.jpg')
-sport6.photo.attach(io: file, filename: 'diving.jpg', content_type: 'image/jpg')
-sport6.save
+# sport6 = Sport.new(name: "Diving")
+# file = URI.open('https://www.seabookings.com/blog/wp-content/uploads/2016/06/Coasteering-Red-Bull.jpg')
+# sport6.photo.attach(io: file, filename: 'diving.jpg', content_type: 'image/jpg')
+# sport6.save
 
 sport7 = Sport.new(name: "Moto")
 file = URI.open('https://racemotor.com.br/wp-content/uploads/2021/09/SI202109190758.jpg')
