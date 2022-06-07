@@ -82,7 +82,8 @@ ActiveRecord::Schema.define(version: 2022_06_07_090136) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
-    t.integer "sport_id"
+    t.bigint "sport_id", null: false
+    t.index ["sport_id"], name: "index_offers_on_sport_id"
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
@@ -137,7 +138,6 @@ ActiveRecord::Schema.define(version: 2022_06_07_090136) do
   add_foreign_key "bookings", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "offers", "sports"
   add_foreign_key "offers", "users"
   add_foreign_key "profiles", "users"
 end
