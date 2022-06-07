@@ -34,6 +34,12 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+    sports = Sport.all
+
+    @sports_ready = []
+    sports.each do |sport|
+      @sports_ready << [sport.name, sport.id]
+    end
   end
 
   def create
@@ -89,6 +95,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:photo, :title, :description, :price, :duration, :location)
+    params.require(:offer).permit(:photo, :title, :description, :price, :duration, :location, :sport_id)
   end
 end
