@@ -15,15 +15,18 @@
   </div>
 </div>
 
-<div class="row m-3 cards content" id="sports">
-  <h2>Sports you can connect with locals</h2>
+
+<div class="row m-3 cards " id="sports">
   <% @sports.each do |sport| %>
+   <%= link_to sports_offers_path(query: sport.name) do %>
       <div class="card-category" style="background-image: url('<%= sport.photo.key.present? ? cl_image_path(sport.photo.key) : '' %>')">
         <%= sport.name %>
-        <%= link_to 'Click here', sports_offers_path(query: sport.name) %>
+        <%#= link_to 'Click here', sports_offers_path(query: sport.name) %>
       </div>
+    <% end %>
   <% end %>
 </div>
+
 
 <div class="banner-slim align-middle">
   <div class="m-5">

@@ -16,7 +16,40 @@
   <br>
   <br>
   <%= f.button :submit, class: "btn btn-accent" %> <% end %>
+<div class="row justify-content-center">
+<div class="col-lg-8 col-md-8">
+<h1 class="text-center">Create a new adventure</h1>
+<ul>
+<%= simple_form_for [ @offer ] do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :price %>
+  <%= f.input :sport_id, as: :select, collection: @sports_ready, input_html: { class: 'text-white' } %>
+  <%= f.input :duration, label: 'Duration in hours'%>
+  <%= f.input :description %>
+  <%= f.input :title %>
+  <%= f.input :location,
+              input_html: { data: { geocoder_target: "location" }, class: "d-none" },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+  <%= f.button :submit, class: "btn btn-accent" %>
+<% end %>
+<%# <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Choose your Sports
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li> "Biking" </li>
+    <li> "climbing"</li>
+    <li> "Skiing"</li>
+  </ul>
+</div> %>
+
+<%# <%= f.label "Choose your sports" %>
+  <%#= f.select(:sports, options_for_select([['Surf'], ['Hiking'], ['Snowboard'], ['Windsurf'], ['Ski']])) %>
+
+
   <div class="pt-5 center"><%= link_to 'Back to list page', root_path, class: "btn btn-accent" %></div>
+    </div>
   </div>
   </div>
 </div>
