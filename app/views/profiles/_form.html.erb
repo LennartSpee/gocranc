@@ -7,15 +7,16 @@
           <%= f.error_notification %>
           <div class="form-inputs">
             <%= f.input :photo, as: :file %>
-            <%= f.input :name, required: false, autofocus: true, class:"transp-input" %>
-            <%= f.input :phone, required: false, autofocus: true, class:"transp-input" %>
-            <%= f.input :age, required: false, autofocus: true, class:"transp-input" %>
-            <%= f.input :favorite_places, required: false, autofocus: true, class:"transp-input" %>
-            <%= f.input :social_medias, required: false, autofocus: true, class:"transp-input" %>
-            <%= f.input :address, required: false, class:"transp-input" %>
-            <%= f.input :bio, required: false, class:"transp-input" %>
+            <%= f.input :name, required: false, autofocus: true, class:"transp-input", :input_html => { :value => "Lennart Spee"} %>
+            <%= f.input :phone, required: false, autofocus: true, class:"transp-input", :input_html => { :value => "+351969765754"} %>
+            <%= f.input :age, required: false, autofocus: true, class:"transp-input", :input_html => { :value => "24"} %>
+            <%= f.input :favorite_places, required: false, autofocus: true, class:"transp-input", :input_html => { :value => "Beach, Forest, Mountains, etc"} %>
+            <%= f.input :social_medias, required: false, autofocus: true, class:"transp-input", :input_html => { :value => "Facebook, Instagram"} %>
+            <%= f.input :address, required: false, required: false, :input_html => { :value => "Lisbon"} %>
+            <%= f.input :bio, required: false, class:"transp-input", :input_html => { :value => "I consider myself adventurous.
+I believe my life is my biggest adventure, where every decision I take and direction I choose forms an adventure on its own."} %>
             <div class="sports-flex">
-            <%= f.input :sports, required: false, collection: ["Surf", "Hiking", "Snowboard", "Windsurf", "Ski"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
+            <%= f.input :sports, required: false, collection: ["Skiing", "Climbing", "Biking", "Flying", "Surfing", "Diving", "Moto"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
             <%# <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: {class:"transp-input"} %>
             <%= f.input :user_type, required: false, collection: ["Guide"], as: :check_boxes, label: 'Are you planning to guide people?'%>
             </div>
