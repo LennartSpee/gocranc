@@ -11,6 +11,7 @@ class Profile < ApplicationRecord
   private
 
   def set_default_type
-    self.user_type = "User" if user_type.nil?
+    self.user_type = user_type == "0" ? "User" : "Guide"
+
   end
 end
