@@ -10,14 +10,15 @@
             <%= f.input :name, required: false, autofocus: true, class:"transp-input" %>
             <%= f.input :phone, required: false, autofocus: true, class:"transp-input" %>
             <%= f.input :age, required: false, autofocus: true, class:"transp-input" %>
-            <%= f.input :favorite_places, required: false, autofocus: true, class:"transp-input" %>
-            <%= f.input :social_medias, required: false, autofocus: true, class:"transp-input" %>
-            <%= f.input :address, required: false, class:"transp-input" %>
             <%= f.input :bio, required: false, class:"transp-input" %>
             <div class="sports-flex">
+            <%= f.input :address, required: false, class:"transp-input" %>
+            <%= f.input :social_medias, required: false, collection: ["Instagram", "Facebook", "Twitter", "Linkedin"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
+            <%= f.input :social_medias, required: false, class:"transp-input" %>
+
             <%= f.input :sports, required: false, collection: ["Surf", "Hiking", "Snowboard", "Windsurf", "Ski"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
-            <%# <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: {class:"transp-input"} %>
-            <%= f.input :user_type, required: false, collection: ["Guide"], as: :check_boxes, label: 'Are you planning to guide people?'%>
+            <%= f.input :favorite_places, required: false, autofocus: true, class:"transp-input" %>
+            <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: {class:"transp-input"} %>
             </div>
             <%= f.button :submit, "Submit", class: "btn btn-accent" %>
           </div>

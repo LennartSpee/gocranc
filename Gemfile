@@ -71,3 +71,8 @@ gem 'pg_search', '~> 2.3.0'
 
 gem 'rest-client'
 gem 'faker'
+
+source 'https://rails-assets.org' do
+gem 'rails-assets-chosen'
+gem 'rails-assets-chosen-bootstrap'
+end
