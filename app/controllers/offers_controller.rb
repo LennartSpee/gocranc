@@ -34,6 +34,12 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+    sports = Sport.all
+
+    @sports_ready = []
+    sports.each do |sport|
+      @sports_ready << [sport.name, sport.id]
+    end
   end
 
   def create
