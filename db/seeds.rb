@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
-OfferSport.destroy_all
 Booking.destroy_all
 Offer.delete_all
 Profile.destroy_all
@@ -163,7 +162,6 @@ p "sports with pics"
 #   user: User.first
 # )
 
-# OfferSport.create(offer: offer, sport: Sport.find_by(name: "Skiing"))
 
 # offer = Offer.create!(
 #   title: 'Climbing',
@@ -176,17 +174,17 @@ p "sports with pics"
 #   user: User.second
 # )
 
-OfferSport.create(offer: offer, sport: Sport.find_by(name: "Climbing"))
-offer = Offer.create!(title: 'Biking', price: '50', duration: '30', description: 'Lord of the Rings', location: 'Lisbon', latitude: 38.722028, longitude: -10.139139, user: User.third)
-OfferSport.create(offer: offer, sport: Sport.find_by(name: "Biking"))
+
+offer = Offer.create!(
+  title: 'Biking',
+  price: '50',
+  duration: '30',
+  description: 'Lord of the Rings',
+  location: 'Lisbon', latitude: 38.722028, longitude: -10.139139, user: User.third)
 offer = Offer.create!(title: 'Flying', price: '50', duration: '30', description: 'Learn scales and chords and play your favourite songs', location: 'Lisbon', latitude: 38.722028, longitude: -9.139139, user: User.fourth)
-OfferSport.create(offer: offer, sport: Sport.find_by(name: "Biking"))
 offer = Offer.create!(title: 'Surfing', price: '50', duration: '30', description: 'If you struggle with the english vocabulary, I am your guy', location: 'Lisbon', latitude: 38.722028, longitude: -9.139139, user: User.fifth)
-OfferSport.create(offer: offer, sport: Sport.find_by(name: "Surfing"))
 offer = Offer.create!(title: 'Diving', price: '50', duration: '30', description: 'Play like a pro', location: 'Lisbon', latitude: 38.722028, longitude: -9.139139, user: User.all.sample)
-OfferSport.create(offer: offer, sport: Sport.find_by(name: "Diving"))
 offer = Offer.create!(title: 'Moto', price: '50', duration: '30', description: 'Play like a pro', location: 'Lisbon', latitude: 38.722028, longitude: -9.139139, user: User.all.sample)
-OfferSport.create(offer: offer, sport: Sport.find_by(name: "Moto"))
 
 p "Offers"
 
