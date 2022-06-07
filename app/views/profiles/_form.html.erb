@@ -1,4 +1,3 @@
-<div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-8 col-md-8">
       <%# <div class="form-profile"> %>
@@ -13,7 +12,6 @@
             <%= f.input :bio, required: false, class:"transp-input" %>
             <div class="sports-flex">
             <%= f.input :address, required: false, class:"transp-input" %>
-            <%= f.input :social_medias, required: false, collection: ["Instagram", "Facebook", "Twitter", "Linkedin"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
             <%= f.input :social_medias, required: false, class:"transp-input" %>
 
             <%= f.input :sports, required: false, collection: ["Surf", "Hiking", "Snowboard", "Windsurf", "Ski"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
