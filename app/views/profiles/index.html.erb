@@ -5,11 +5,10 @@
   <div class="row">
       <% @profiles.each do |profile| %>
       <div class="col-sm guide">
-        <%= profile.photo.key %>
+       <%= profile.photo.key %>
         <%# display profile image %>
-        <%= profile.name %>
+      😎: <%= profile.name %>
         <br>
-        <%= profile.address %>
         <%# location instead of adress %>
         <br>
         <%= link_to 'See Guide', profile_path(profile), class: "btn btn-accent"%>
