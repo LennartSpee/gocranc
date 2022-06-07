@@ -176,6 +176,7 @@ p "sports with pics"
 #   user: User.second
 # )
 
+
 OfferSport.create(offer: offer, sport: Sport.find_by(name: "Climbing"))
 offer = Offer.create!(title: 'Biking', price: '50', duration: '30', description: 'Lord of the Rings', location: 'Lisbon', latitude: 38.722028, longitude: -10.139139, user: User.third)
 OfferSport.create(offer: offer, sport: Sport.find_by(name: "Biking"))

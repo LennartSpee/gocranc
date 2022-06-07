@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_03_111842) do
+ActiveRecord::Schema.define(version: 2022_06_06_165710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,15 +69,6 @@ ActiveRecord::Schema.define(version: 2022_06_03_111842) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "offer_sports", force: :cascade do |t|
-    t.bigint "offer_id", null: false
-    t.bigint "sport_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["offer_id"], name: "index_offer_sports_on_offer_id"
-    t.index ["sport_id"], name: "index_offer_sports_on_sport_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -145,8 +136,6 @@ ActiveRecord::Schema.define(version: 2022_06_03_111842) do
   add_foreign_key "bookings", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "offer_sports", "offers"
-  add_foreign_key "offer_sports", "sports"
   add_foreign_key "offers", "users"
   add_foreign_key "profiles", "users"
 end
