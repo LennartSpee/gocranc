@@ -50,10 +50,10 @@ sport5.save
 # sport6.photo.attach(io: file, filename: 'diving.jpg', content_type: 'image/jpg')
 # sport6.save
 
-sport7 = Sport.new(name: "Moto")
+sport6 = Sport.new(name: "Moto")
 file = URI.open('https://racemotor.com.br/wp-content/uploads/2021/09/SI202109190758.jpg')
-sport7.photo.attach(io: file, filename: 'moto.jpg', content_type: 'image/jpg')
-sport7.save
+sport6.photo.attach(io: file, filename: 'moto.jpg', content_type: 'image/jpg')
+sport6.save
 
 # Offers
 

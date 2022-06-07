@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Adventures for you</h1>
     <br>
-    <p>checkout these offers for you most interesting trips</p>
+    <p>checkout these adventures for you most interesting trips</p>
     <%= link_to 'Create new offer', new_offer_path, class: "btn btn-accent" %>
   </div>
 </div>
@@ -17,7 +17,7 @@
 </div>
 <% else %>
 <div class="m-4 p-5 cards content">
-<h1>No Offers for this sport... <%= link_to "Try again.. ",root_path %></h1>
+<h1>No adventures for this sport right now... <%= link_to "Try again.. ",root_path %></h1>
 </div>
 
 <% end %>
