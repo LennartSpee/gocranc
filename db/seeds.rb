@@ -65,7 +65,8 @@ offer1 = Offer.new(
   location: 'Lisbon',
   latitude: 38.722028,
   longitude: -9.139139,
-  user: User.first
+  user: User.first,
+  sport_id: 1
 )
 file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
 offer1.photo.attach(io: file, filename: 'ski.jpg', content_type: 'image/jpg')
@@ -79,7 +80,8 @@ offer2 = Offer.new(
   location: 'Rio de Janeiro',
   latitude: 38.722028,
   longitude: -9.139139,
-  user: User.second
+  user: User.second,
+  sport_id: 2
 )
 
 file = URI.open('https://img.redbull.com/images/c_crop,w_5122,h_2561,x_0,y_2956,f_auto,q_auto/c_scale,w_1200/redbullcom/2019/06/03/83ddcec2-b607-4def-a965-abb0b94fa412/how-to-take-indoor-climbing-outdoors')
@@ -95,7 +97,8 @@ offer3 = Offer.new(
   location: 'Rio de Janeiro',
   latitude: 38.722028,
   longitude: -9.139139,
-  user: User.second
+  user: User.second,
+  sport_id: 3
 )
 
 file = URI.open('https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dw87df4949/images/plp/Mountain/Sender/ridestyle-downhill-canyon-sender-01.jpg?sw=1920')
@@ -110,7 +113,9 @@ offer4 = Offer.new(
   location: 'Monsanto',
   latitude: 39.46203,
   longitude: -8.7118,
-  user: User.third)
+  user: User.third,
+  sport_id: 4
+)
 
 file = URI.open('http://upload.wikimedia.org/wikipedia/commons/9/9b/Ocean_Wingsuit_Formation_%286366966219%29.jpg')
 offer4.photo.attach(io: file, filename: 'flying.jpg', content_type: 'image/jpg')
@@ -124,7 +129,9 @@ offer5 = Offer.new(
   location: 'Lisbon',
   latitude: 38.722028,
   longitude: -10.139139,
-  user: User.third)
+  user: User.third,
+  sport_id: 5
+)
 file = URI.open('https://www.boardsportsource.com/wp-content/uploads/2021/07/Mikey-February-by-Alan-Van-Gysen.jpg')
 offer5.photo.attach(io: file, filename: 'surfing.jpg', content_type: 'image/jpg')
 offer5.save
@@ -137,7 +144,9 @@ offer6 = Offer.new(
   location: 'Lisbon',
   latitude: 38.722028,
   longitude: -9.139139,
-  user: User.all.sample)
+  user: User.all.sample,
+  sport_id: 6
+)
 file = URI.open('https://racemotor.com.br/wp-content/uploads/2021/09/SI202109190758.jpg')
 offer6.photo.attach(io: file, filename: 'diving.jpg', content_type: 'image/jpg')
 offer6.save
