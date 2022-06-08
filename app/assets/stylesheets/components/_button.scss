@@ -26,6 +26,14 @@
 .btn-accent:hover {
   opacity: 1;
   color: #ffffff;
+  transform: scale(1.1) skew(-10deg);
+  // transform: skew(-10deg);
+}
+.btn-accent-big:hover {
+  opacity: 1;
+  color: #ffffff;
+  transform: scale(1.1) skew(-10deg);
+  // transform: skew(-10deg);
 }
 
 .btn .btn-close {
