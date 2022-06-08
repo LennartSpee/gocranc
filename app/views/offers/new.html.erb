@@ -3,7 +3,7 @@
     <h1 class="text-center">Create a new adventure</h1>
     <%= simple_form_for [ @offer ] do |f| %>
       <%= f.error_notification %>
-      <%= f.input :sport, required: false, as: :select, collection: @sports, input_html: { class: 'text-white' }%>
+      <%= f.input :sport, required: false, as: :select, collection: @sports, prompt: 'Choose the Sport', input_html: { class: 'text-white' }%>
       <%= f.input :title, required: false %>
       <%= f.input :description, required: false, :input_html => { :value => "Your surfing skills can get better on every turn, on every wave you catch, come practice!"}  %>
       <%= f.input :duration, required: false, label: 'Duration in hours', :input_html => { :value => 2} %>
