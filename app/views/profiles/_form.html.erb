@@ -15,9 +15,9 @@
             <%= f.input :bio, required: false, class:"transp-input", :input_html => { :value => "I consider myself adventurous.
 I believe my life is my biggest adventure, where every decision I take and direction I choose forms an adventure on its own."} %>
             <div class="sports-flex">
-            <%= f.input :sports, required: false, collection: ["Skiing", "Climbing", "Biking", "Flying", "Surfing", "Diving", "Moto"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
+            <%= f.input :sports, required: false, collection: ["Skiing", "Climbing", "Biking", "Flying", "Surfing", "Moto"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
             <%# <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: {class:"transp-input"} %>
-            <%= f.input :user_type, required: false, collection: ["Guide"], as: :check_boxes, label: 'Are you planning to guide people?'%>
+            <%= f.check_box :user_type, label: 'Are you planning to guide people?'%>
             </div>
             <%= f.button :submit, "Submit", class: "btn btn-accent" %>
           </div>
