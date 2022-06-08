@@ -33,7 +33,7 @@
     <% end %>
 <div class="container">
  <div class="mt-5 mb-5 mx-5 button-bottom">
-    <% if     @offer.user == current_user %>
+    <% if @offer.user == current_user %>
       <%= link_to 'Chat', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
       <%# <%= link_to 'Go to last conversations', chatroom_path(@chatroom), class: "btn-lg btn-accent" %>
       <%= link_to 'Edit this adventure', edit_offer_path, class: "btn-lg btn-accent" %>
