@@ -34,17 +34,14 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
-    sports = Sport.all
-
-    @sports_ready = []
-    sports.each do |sport|
-      @sports_ready << [sport.name, sport.id]
-    end
+    @sports = Sport.all
   end
 
   def create
     @offer = Offer.new(offer_params)
+    @sport = Sport.find(params[:offer][:sport])
     @offer.user = current_user
+    @offer.sport = @sport
     if @offer.save
       redirect_to offer_path(@offer)
     else
@@ -95,6 +92,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:photo, :title, :description, :price, :duration, :location, :sport_id)
+    params.require(:offer).permit(:photo, :title, :description, :price, :duration, :location)
   end
 end
