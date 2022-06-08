@@ -1,26 +1,28 @@
-<div class="m-5">
-  <h1>#<%= @chatroom.name %></h1>
+<div class="m-5 container">
+  <h1>Chat</h1>
 
   <div class="messages">
     <% @chatroom.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
+      <div id="message-<%= message.id %>" class="text-<%= message.user == current_user ? 'end' : 'start' %>">
         <small>
           <strong><%= message.user.email %></strong>
           <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
+        </small><br>
+        <p class="mt-2 fs-6 badge px-3 py-2 rounded-pill bg-<%= message.user == current_user ? 'primary' : 'light text-dark' %>"><%= message.content %></p>
       </div>
     <% end %>
   </div>
-<%= simple_form_for [@chatroom, @message],
-  remote: true,
-  html: {class: "d-flex"} do |f|
-%>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Message ##{@chatroom.name}",
-    wrapper_html: {class: "flex-grow-1"}
-  %>
-  <%= f.submit "Send", class: "btn btn-accent" %>
-<% end %>
+
+  <div class="mt-5">
+    <%= simple_form_for [@chatroom, @message],
+      remote: true,
+      html: {class: "d-flex"} do |f| %>
+        <%= f.input :content,
+          label: false,
+          placeholder: "Start typing...",
+          wrapper_html: {class: "flex-grow-1"}
+        %>
+        <%= f.submit "Send", class: "btn btn-accent ms-5" %>
+      <% end %>
+  </div>
 </div>
