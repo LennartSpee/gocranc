@@ -30,7 +30,7 @@ file = URI.open('https://img.redbull.com/images/c_crop,w_5122,h_2561,x_0,y_2956,
 sport2.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
 sport2.save
 
-sport3 = Sport.new(name: "Biking")
+sport3 = Sport.new(name: "Cycling")
 file = URI.open('https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dw87df4949/images/plp/Mountain/Sender/ridestyle-downhill-canyon-sender-01.jpg?sw=1920')
 sport3.photo.attach(io: file, filename: 'bikingrail.jpg', content_type: 'image/jpg')
 sport3.save
@@ -45,15 +45,15 @@ file = URI.open('https://www.boardsportsource.com/wp-content/uploads/2021/07/Mik
 sport5.photo.attach(io: file, filename: 'surfing.jpg', content_type: 'image/jpg')
 sport5.save
 
-# sport6 = Sport.new(name: "Diving")
-# file = URI.open('https://www.seabookings.com/blog/wp-content/uploads/2016/06/Coasteering-Red-Bull.jpg')
-# sport6.photo.attach(io: file, filename: 'diving.jpg', content_type: 'image/jpg')
-# sport6.save
-
 sport6 = Sport.new(name: "Moto")
 file = URI.open('https://racemotor.com.br/wp-content/uploads/2021/09/SI202109190758.jpg')
 sport6.photo.attach(io: file, filename: 'moto.jpg', content_type: 'image/jpg')
 sport6.save
+
+# sport6 = Sport.new(name: "Diving")
+# file = URI.open('https://www.seabookings.com/blog/wp-content/uploads/2016/06/Coasteering-Red-Bull.jpg')
+# sport6.photo.attach(io: file, filename: 'diving.jpg', content_type: 'image/jpg')
+# sport6.save
 
 # Offers
 
@@ -61,7 +61,7 @@ offer1 = Offer.new(
   title: 'Skitour Davos',
   price: '50',
   duration: '30',
-  description: 'Learn how to stand up on a bord and catch your first waves',
+  description: 'When life gives you snow you go skiing…',
   location: 'Lisbon',
   latitude: 38.722028,
   longitude: -9.139139,
@@ -73,23 +73,6 @@ offer1.photo.attach(io: file, filename: 'ski.jpg', content_type: 'image/jpg')
 offer1.save
 
 offer2 = Offer.new(
-  title: 'Motobike in Spain',
-  price: '50',
-  duration: '30',
-  description: 'Control your body, control your mind',
-  location: 'Rio de Janeiro',
-  latitude: 38.722028,
-  longitude: -9.139139,
-  user: User.second,
-  sport: Sport.second
-)
-
-file = URI.open('https://img.redbull.com/images/c_crop,w_5122,h_2561,x_0,y_2956,f_auto,q_auto/c_scale,w_1200/redbullcom/2019/06/03/83ddcec2-b607-4def-a965-abb0b94fa412/how-to-take-indoor-climbing-outdoors')
-offer2.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
-offer2.save
-
-
-offer3 = Offer.new(
   title: 'Climbing in Brazil',
   price: '50',
   duration: '30',
@@ -100,23 +83,36 @@ offer3 = Offer.new(
   user: User.third,
   sport: Sport.all[3]
 )
+file = URI.open('https://img.redbull.com/images/c_crop,w_5122,h_2561,x_0,y_2956,f_auto,q_auto/c_scale,w_1200/redbullcom/2019/06/03/83ddcec2-b607-4def-a965-abb0b94fa412/how-to-take-indoor-climbing-outdoors')
+offer2.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
+offer2.save
 
-file = URI.open('https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dw87df4949/images/plp/Mountain/Sender/ridestyle-downhill-canyon-sender-01.jpg?sw=1920')
-offer3.photo.attach(io: file, filename: 'biking.jpg', content_type: 'image/jpg')
-offer3.save
-
-offer4 = Offer.new(
-  title: 'Biking in Portugal',
+offer3 = Offer.new(
+  title: 'Cycling in Portugal',
   price: '50',
   duration: '30',
-  description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,',
+  description: 'You are one ride away from a good mood.',
   location: 'Monsanto',
   latitude: 39.46203,
   longitude: -8.7118,
   user: User.all[4],
   sport: Sport.all[4]
 )
+file = URI.open('https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dw87df4949/images/plp/Mountain/Sender/ridestyle-downhill-canyon-sender-01.jpg?sw=1920')
+offer3.photo.attach(io: file, filename: 'Cycling.jpg', content_type: 'image/jpg')
+offer3.save
 
+offer4 = Offer.new(
+  title: 'Skydive in Dubai',
+  price: '50',
+  duration: '30',
+  description: 'Those who don´t jump, will never fly.',
+  location: 'Dubai',
+  latitude: 38.722028,
+  longitude: -9.139139,
+  user: User.second,
+  sport: Sport.second
+)
 file = URI.open('http://upload.wikimedia.org/wikipedia/commons/9/9b/Ocean_Wingsuit_Formation_%286366966219%29.jpg')
 offer4.photo.attach(io: file, filename: 'flying.jpg', content_type: 'image/jpg')
 offer4.save
@@ -125,8 +121,8 @@ offer5 = Offer.new(
   title: 'Surfing in France',
   price: '50',
   duration: '30',
-  description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,',
-  location: 'Lisbon',
+  description: 'Learn how to stand up on a bord and catch your first waves',
+  location: 'Biarritz',
   latitude: 38.722028,
   longitude: -10.139139,
   user: User.all[5],
@@ -140,8 +136,8 @@ offer6 = Offer.new(
   title: 'Motobike in Spain',
   price: '50',
   duration: '30',
-  description: 'Play like a pro',
-  location: 'Lisbon',
+  description: 'Everything looks better from the inside of a motorcycle helmet.',
+  location: 'Vigo',
   latitude: 38.722028,
   longitude: -9.139139,
   user: User.all[6],
@@ -150,7 +146,6 @@ offer6 = Offer.new(
 file = URI.open('https://racemotor.com.br/wp-content/uploads/2021/09/SI202109190758.jpg')
 offer6.photo.attach(io: file, filename: 'diving.jpg', content_type: 'image/jpg')
 offer6.save
-
 
 p "sports with pics"
 
