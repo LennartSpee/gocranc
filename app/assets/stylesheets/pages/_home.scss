@@ -1,1 +1,11 @@
 // Specific CSS for your home-page
+@media screen and (max-width: 600px) {
+  .m-5 {
+    margin: 0 !important;
+  }
+  .row > * {
+  flex-shrink: 1; }
+  .second {
+    display: none;
+  }
+}
