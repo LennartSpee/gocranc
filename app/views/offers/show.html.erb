@@ -4,9 +4,9 @@
     <%= link_to 'Back', offers_path, class: "btn btn-accent" %>
     </div>
     <% if @offer.photo.key %>
-      <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @offer.photo.key, height: 300 %>
     <% else %>
-      <%= image_tag "offer.png", alt: "offer", height: 250, width: 250%>
+      <%= image_tag "offer.png", alt: "offer", height: 300 %>
     <% end %>
     <div class="card-trip-infos">
       <div>
