@@ -1,4 +1,4 @@
-  <div class="row justify-content-center">
+  <div class="m-5 row justify-content-center">
     <div class="col-lg-8 col-md-8">
       <%# <div class="form-profile"> %>
         <h1 class="text-center">Edit your profile</h1>
@@ -14,12 +14,13 @@
             <%= f.input :address, required: false, required: false, :input_html => { :value => "Brazil"} %>
             <%= f.input :bio, required: false, class:"transp-input", :input_html => { :value => "Life is either a daring adventure or nothing at all."} %>
             <div class="sports-flex">
-            <%= f.input :sports, required: false, collection: ["Skiing", "Climbing", "Biking", "Flying", "Surfing", "Moto"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox"}, class:"transp-input"%>
-            <%# <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: {class:"transp-input"} %>
-            <%= f.check_box :user_type, label: 'Are you planning to guide people?'%>
+              <%= f.input :sports, required: false, collection: ["Skiing", "Climbing", "Biking", "Flying", "Surfing", "Moto"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox px-3"}, class:"transp-input"%>
+              <%# <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: {class:"transp-input"} %>
             </div>
-            <%= f.button :submit, "Submit", class: "btn btn-accent" %>
+            <legend class="col-form-label pt-0">Wanna be a guide?</legend>
+            <%= f.check_box :user_type, required: false %> <span></span>
           </div>
+          <%= f.button :submit, "Submit", class: "btn btn-accent mt-4" %>
         <% end %>
       <%# </div> %>
     </div>

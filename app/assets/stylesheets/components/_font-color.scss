@@ -1,5 +1,15 @@
 body {
   color: $white;
+
+  .btn {
+    text-transform: uppercase;
+  }
+  h1 {
+    text-transform: uppercase;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
 }
 
 .form-control {

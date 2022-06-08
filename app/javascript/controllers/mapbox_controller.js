@@ -33,6 +33,12 @@ export default class extends Controller {
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)
       .addTo(this.map)
+
+      popup._content.addEventListener("click", (event) => {
+        let idMap = document.querySelector(".mapboxgl-popup-content").querySelector(".d-none").innerHTML
+        let url = `offers/${idMap}`
+        window.location.href =url;
+      });
     });
   }
 

@@ -41,7 +41,7 @@
       <%= link_to 'Bookings for you', my_offers_bookings_path, class: "btn-lg btn-accent" %>
     <% else %>
 
-      <%= link_to 'New booking for this adventure', new_offer_booking_path(@offer), class: "btn-lg btn-accent" %>
+      <%= link_to 'Want to book this adventure?', new_offer_booking_path(@offer), class: "btn-lg btn-accent" %>
       <%= link_to 'Chat with the Guide', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
       <%# <%= link_to 'Go to last conversations', chatrooms_path(@chatroom), class: "btn-lg btn-accent" %>
 
