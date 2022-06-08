@@ -54,79 +54,73 @@ sport6.save
 profile1 = Profile.new(
   user: user1,
   name: "Misty Newton",
-  phone: 961234567,
+  phone: +351961234567,
   age: 51,
   bio: "Your life becomes a masterpiece when you learn to master peace.",
   address: "U.S.",
   user_type: "Guide"
 )
-file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
-profile1.photo.attach(io: file, filename: 'Misty.jpg', content_type: 'image/jpg')
+profile1.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
 profile1.save!
 
 profile2 = Profile.new(
   user: user2,
   name: "Alice Guerrero",
-  phone: 965478965,
+  phone: +351965478965,
   age: 36,
   bio: "Your life does not get better by chance. It gets better by change.",
   address: "Spain",
   user_type: "Guide"
 )
-file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
-profile2.photo.attach(io: file, filename: 'Alice.jpg', content_type: 'image/jpg')
+profile2.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
 profile2.save!
 
 profile3 = Profile.new(
   user: user3,
   name: "Perry Byrd",
-  phone: 968798654,
+  phone: +351968798654,
   age: 27,
   bio: "Go the extra mile, it’s never crowded.",
   address: "London",
   user_type: "Guide"
 )
-file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
-profile3.photo.attach(io: file, filename: 'Perry.jpg', content_type: 'image/jpg')
+profile3.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
 profile3.save!
 
 profile4 = Profile.new(
   user: user4,
   name: "Shirley Wolf",
-  phone: 969874563,
+  phone: +351969874563,
   age: 25,
   bio: "Travel is the only thing you buy that makes you richer.",
   address: "France",
   user_type: "Guide"
 )
-file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
-profile4.photo.attach(io: file, filename: 'Shirley.jpg', content_type: 'image/jpg')
+profile4.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
 profile4.save!
 
 profile5 = Profile.new(
   user: user5,
   name: "Roberta Lloyd",
-  phone: 967891234,
+  phone: +351967891234,
   age: 45,
   bio: "Take only memories, leave only footprints.",
   address: "Dubai",
   user_type: "Guide"
 )
-file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
-profile5.photo.attach(io: file, filename: 'Roberta.jpg', content_type: 'image/jpg')
+profile5.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
 profile5.save!
 
 profile6 = Profile.new(
   user: user6,
   name: "Jamie Miles",
-  phone: 961237894,
+  phone: +351961237894,
   age: 23,
   bio: "Life is either a daring adventure or nothing at all.",
   address: "Brazil",
   user_type: "Guide"
 )
-file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
-profile6.photo.attach(io: file, filename: 'Jamie.jpg', content_type: 'image/jpg')
+profile6.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
 profile6.save!
 
 offer1 = Offer.new(
