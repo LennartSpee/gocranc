@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_07_090136) do
+ActiveRecord::Schema.define(version: 2022_06_08_171112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,8 @@ ActiveRecord::Schema.define(version: 2022_06_07_090136) do
     t.float "latitude"
     t.float "longitude"
     t.bigint "sport_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.index ["chatroom_id"], name: "index_offers_on_chatroom_id"
     t.index ["sport_id"], name: "index_offers_on_sport_id"
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
@@ -138,6 +140,7 @@ ActiveRecord::Schema.define(version: 2022_06_07_090136) do
   add_foreign_key "bookings", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "offers", "chatrooms"
   add_foreign_key "offers", "users"
   add_foreign_key "profiles", "users"
 end

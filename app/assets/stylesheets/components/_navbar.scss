@@ -2,6 +2,7 @@
   justify-content: space-between;
   text-transform: uppercase;
   font-style: italic;
+  background: transparent;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -16,4 +17,8 @@
   // webkit-filter: blur(4px); /* Chrome, Safari, Opera */
   filter: blur(4px);
   transition: 0.5s;
+}
+
+.transparent {
+  background: transparent !important;
 }
