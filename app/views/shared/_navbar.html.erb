@@ -35,7 +35,7 @@
           <li class="nav-item">
             <%= link_to "Adventures", offers_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown ms-3">
             <%= image_tag "avatar.png", class: "avatar dropdown-toggle ml-20px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if current_user.profile.present? %>
