@@ -1,6 +1,7 @@
 class Offer < ApplicationRecord
   belongs_to :user
   belongs_to :sport
+  belongs_to :chatroom
 
   has_many :bookings, dependent: :destroy
   # has_many :offer_sports
@@ -11,6 +12,10 @@ class Offer < ApplicationRecord
   geocoded_by :location
 
   after_validation :geocode, if: :will_save_change_to_location?
+
+  before_validation :build_related_chatroom, on: :create
+
+  # accepts_nested_attributes_for :chatroom
 
   # validates :price,  presence: true
   validates :title, presence: true
@@ -24,4 +29,10 @@ class Offer < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  private
+
+  def build_related_chatroom
+    self.chatroom = build_chatroom(name: "#{title} Chatroom")
+  end
 end
