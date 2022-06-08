@@ -14,7 +14,7 @@
   <% @offers.each do |offer| %>
      <%= link_to offer_path(offer.id) do %>
   <%#= link_to 'Show', offer_path(offer.id) do%>
-    <div class="card-category" style="background-image: url('<%= offer.photo.key.present? ? cl_image_path(offer.photo.key) : '' %>')">
+    <div class="card-category" style="background-image: url('<%= offer.photo.key.present? ? cl_image_path(offer.photo.key) :  '' %>')">
       <%= offer.title %><%#= link_to 'Show', offer_path(offer.id) %>
     </div>
   <% end %>
