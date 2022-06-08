@@ -5,7 +5,15 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  color: #f7f7f7;
+  background-color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5)
+  }
 }
+
 
 .mapboxgl-ctrl-geocoder {
   max-width: none;
@@ -14,4 +22,9 @@
   box-shadow: none;
   color: #0E0000;
   background-color: #F4F4F4;
+}
+
+.mapboxgl-popup-close-button{
+  color: white;
+  font-size: 150%;
 }
