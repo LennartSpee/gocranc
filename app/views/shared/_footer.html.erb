@@ -1,11 +1,45 @@
-<div class="footer mt-auto">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+<footer>
+  <div class="row py-5">
+    <div class="col-4">
+      <h5>ABOUT US</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contacts</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Our Team</a></li>
+       <li class="nav-item mb-2">
+          <%= link_to "FAQs", "/faq", class: "nav-link  p-0 text-muted" %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-4">
+      <h5>CORPORATE</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hiring Now</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Social Projects</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Our Partners</a></li>
+      </ul>
+    </div>
+
+    <div class="col-4">
+      <h5>RESOURCES</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Blog</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Podcast</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Our Athletes</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="footer-copyright">
-    © copyright 2022 - getcrank.io <i class="fas fa-heart"></i>
+
+  <div class="footer mt-auto d-flex justify-content-between">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-links">
+        <%= image_tag "logo.png", alt: "getcrank.io", width: 200 %>
+      </div>
+    <p>    © copyright 2022 - getcrank.io <i class="fas fa-heart"></i></p>
   </div>
-</div>
+</footer>
