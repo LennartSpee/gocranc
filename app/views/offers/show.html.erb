@@ -34,7 +34,7 @@
 <div class="container">
  <div class="mt-5 mb-5 mx-5 button-bottom">
     <% if @offer.user == current_user %>
-      <%= link_to 'Chat', chatrooms_path, method: :post, class: "btn-lg btn-accent" %>
+      <%= link_to 'Chat', chatroom_path(@offer.chatroom), class: "btn-lg btn-accent" %>
       <%# <%= link_to 'Go to last conversations', chatroom_path(@chatroom), class: "btn-lg btn-accent" %>
       <%= link_to 'Edit this adventure', edit_offer_path, class: "btn-lg btn-accent" %>
       <%= link_to 'Delete it', offer_path(@offer), method: :delete,  class: "btn-lg btn-accent" %>
@@ -42,7 +42,7 @@
     <% else %>
 
       <%= link_to 'Want to book this adventure?', new_offer_booking_path(@offer), class: "btn-lg btn-accent" %>
-      <%= link_to 'Chat with the Guide', chatroom_path(@offer.chatroom), class: "btn-lg btn-accent" %>
+      <%= link_to 'Chat with Guide', chatroom_path(@offer.chatroom), class: "btn-lg btn-accent" %>
       <%# <%= link_to 'Go to last conversations', chatrooms_path(@chatroom), class: "btn-lg btn-accent" %>
 
     <% end %>
