@@ -64,7 +64,7 @@ class OffersController < ApplicationController
 
   def my_offers
     @offers = current_user.offers
-    @markers = @offers.geocoded.map do |offer|
+    @markers = @offers.map do |offer|
       {
         lat: offer.latitude,
         lng: offer.longitude,
