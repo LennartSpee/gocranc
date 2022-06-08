@@ -34,11 +34,14 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+    @sports = Sport.all
   end
 
   def create
     @offer = Offer.new(offer_params)
+    @sport = Sport.find(params[:offer][:sport])
     @offer.user = current_user
+    @offer.sport = @sport
     if @offer.save
       redirect_to offer_path(@offer)
     else

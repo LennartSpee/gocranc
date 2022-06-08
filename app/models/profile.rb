@@ -1,10 +1,17 @@
 class Profile < ApplicationRecord
   belongs_to :user
-  validates :name, presence: true
-  validates :phone, presence: true
-  validates :age, presence: true
-  validates :bio, length: { minimum: 20 }, presence: true
-  validates :address, presence: true
-  validates :user_type, presence: true
+
+  validates :name, :phone, :age, :bio, :address, :user_type, presence: true
+  validates :bio, length: { minimum: 20 }
+
   has_one_attached :photo
+
+  before_validation :set_default_type
+
+  private
+
+  def set_default_type
+    self.user_type = user_type == "0" ? "User" : "Guide"
+
+  end
 end

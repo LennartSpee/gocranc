@@ -1,17 +1,20 @@
-<div class="mt-5 mx-5">
-<h1 class="text-center">Create a new adventure</h1>
-<ul>
-<%= simple_form_for [ @offer ] do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :price %>
-  <%= f.input :duration, label: 'Duration in hours'%>
-  <%= f.input :description %>
-  <%= f.input :title %>
-  <%= f.input :location,
-              input_html: { data: { geocoder_target: "location" }, class: "d-none" },
-              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-  <%= f.button :submit, class: "btn btn-accent" %>
-<% end %>
-  <div class="pt-5 center"><%= link_to 'Back to list page', root_path, class: "btn btn-accent" %></div>
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-md-8">
+    <h1 class="text-center">Create a new adventure</h1>
+    <%= simple_form_for [ @offer ] do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :sport, required: false, as: :select, collection: @sports, input_html: { class: 'text-white' }%>
+      <%= f.input :title, required: false %>
+      <%= f.input :description, required: false, :input_html => { :value => "Your surfing skills can get better on every turn, on every wave you catch, come practice!"}  %>
+      <%= f.input :duration, required: false, label: 'Duration in hours', :input_html => { :value => 2} %>
+      <%= f.input :price, required: false, :input_html => { :value => 35 } %>
+      <%= f.input :location, required: false,
+                  input_html: { data: { geocoder_target: "location" }, class: "d-none" },
+                  wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+      <%= f.input :photo, required: false, as: :file %>
+      <%= f.button :submit, class: "btn btn-accent" %>
+      <% end %>
+      <div class="pt-5 center">
+      <%= link_to 'Back to list page', root_path, class: "btn btn-accent" %>
   </div>
+</div>

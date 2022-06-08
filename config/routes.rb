@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :offers do
     resources :bookings, only: [:create, :new, :edit, :update, :destroy]
-    resources :reviews, only: :create
+    resources :reviews, only: [:create, :new]
     collection do
       get :sports
     end

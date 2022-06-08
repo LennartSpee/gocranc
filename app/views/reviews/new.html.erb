@@ -1,0 +1,10 @@
+<div>
+<h2 class="text-center">Review it!</h2>
+</div>
+<div class="form-profile">
+<%= simple_form_for([@offer, @review]) do |f| %>
+        <%= f.input :comment, required: false, as: :text %>
+        <%= f.input :rating, as: :float %>
+        <%= f.submit 'Create Review', class: "btn btn-accent" %>
+        <% end %>
+</div>

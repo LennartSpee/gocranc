@@ -25,8 +25,8 @@
       <td><%= booking.end_date %></td>
       <td><%= booking.status %></td>
       <td><%= booking.created_at.day%>-<%= booking.created_at.month%>-<%= booking.created_at.year %></td>
-      <td><%= link_to "Accept", change_booking_status_path(id: booking.id, response: :accepted), method: :post, class: "btn btn-accent" %></td>
-      <td><%= link_to "Decline", change_booking_status_path(id: booking.id, response: :declined), method: :post, data:{confirm: "Are you sure?"}, class: "btn btn-accent" %></td>
+      <td><%= link_to "Accept Request", change_booking_status_path(id: booking.id, response: :accepted), method: :post, class: "btn btn-accent" %></td>
+      <td><%= link_to "Decline Request", change_booking_status_path(id: booking.id, response: :declined), method: :post, data:{confirm: "Are you sure?"}, class: "btn btn-accent" %></td>
     </tr>
       <% end %>
   </tbody>

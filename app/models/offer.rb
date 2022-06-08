@@ -1,10 +1,10 @@
 class Offer < ApplicationRecord
   belongs_to :user
-  # belongs_to :sport
+  belongs_to :sport
 
   has_many :bookings, dependent: :destroy
   # has_many :offer_sports
-  has_many :sports, through: :offer_sports
+  # has_many :sports, through: :offer_sports
 
   has_one_attached :photo
 
