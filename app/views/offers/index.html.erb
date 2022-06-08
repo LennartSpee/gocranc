@@ -14,7 +14,7 @@
   <% @offers.each do |offer| %>
      <%= link_to offer_path(offer.id) do %>
   <%#= link_to 'Show', offer_path(offer.id) do%>
-    <div class="card-category" style="background-image: url('<%= offer.photo.key.present? ? cl_image_path(offer.photo.key) :  '' %>')">
+    <div class="card-category" style="background-image: url('<%= offer.photo.key.present? ? cl_image_path(offer.photo.key) :  "https://images.unsplash.com/photo-1477466535227-9f581b3eec21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80" %>')">
       <%= offer.title %><%#= link_to 'Show', offer_path(offer.id) %>
     </div>
   <% end %>
