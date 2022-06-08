@@ -12,9 +12,16 @@ Sport.destroy_all
 
 p "DB clean"
 
-6.times do
-  User.create!(email: Faker::Internet.email, password: "123456")
-end
+# 6.times do
+#   User.create!(email: Faker::Internet.email, password: "123456")
+# end
+
+user1 = User.create!(email: "mysty@gmail.com", password: "123456")
+user2 = User.create!(email: "alice@gmail.com", password: "123456")
+user3 = User.create!(email: "perry@gmail.com", password: "123456")
+user4 = User.create!(email: "shirley@gmail.com", password: "123456")
+user5 = User.create!(email: "roberta@gmail.com", password: "123456")
+user6 = User.create!(email: "jamie@gmail.com", password: "123456")
 
 p "user seeded"
 
@@ -22,32 +29,32 @@ p "user seeded"
 
 sport1 = Sport.new(name: "Skiing")
 file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
-sport1.photo.attach(io: file, filename: 'ski.jpg', content_type: 'image/jpg')
+sport1.photo.attach(io: file, filename: 'Ski.jpg', content_type: 'image/jpg')
 sport1.save
 
 sport2 = Sport.new(name: "Climbing")
 file = URI.open('https://img.redbull.com/images/c_crop,w_5122,h_2561,x_0,y_2956,f_auto,q_auto/c_scale,w_1200/redbullcom/2019/06/03/83ddcec2-b607-4def-a965-abb0b94fa412/how-to-take-indoor-climbing-outdoors')
-sport2.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
+sport2.photo.attach(io: file, filename: 'Climb.jpg', content_type: 'image/jpg')
 sport2.save
 
 sport3 = Sport.new(name: "Cycling")
 file = URI.open('https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dw87df4949/images/plp/Mountain/Sender/ridestyle-downhill-canyon-sender-01.jpg?sw=1920')
-sport3.photo.attach(io: file, filename: 'bikingrail.jpg', content_type: 'image/jpg')
+sport3.photo.attach(io: file, filename: 'Bikingrail.jpg', content_type: 'image/jpg')
 sport3.save
 
-sport4 = Sport.new(name: "Flying")
+sport4 = Sport.new(name: "Sky Diving")
 file = URI.open('http://upload.wikimedia.org/wikipedia/commons/9/9b/Ocean_Wingsuit_Formation_%286366966219%29.jpg')
-sport4.photo.attach(io: file, filename: 'flying.jpg', content_type: 'image/jpg')
+sport4.photo.attach(io: file, filename: 'Sky Diving.jpg', content_type: 'image/jpg')
 sport4.save
 
 sport5 = Sport.new(name: "Surfing")
 file = URI.open('https://www.boardsportsource.com/wp-content/uploads/2021/07/Mikey-February-by-Alan-Van-Gysen.jpg')
-sport5.photo.attach(io: file, filename: 'surfing.jpg', content_type: 'image/jpg')
+sport5.photo.attach(io: file, filename: 'Surfing.jpg', content_type: 'image/jpg')
 sport5.save
 
 sport6 = Sport.new(name: "Moto")
 file = URI.open('https://racemotor.com.br/wp-content/uploads/2021/09/SI202109190758.jpg')
-sport6.photo.attach(io: file, filename: 'moto.jpg', content_type: 'image/jpg')
+sport6.photo.attach(io: file, filename: 'Moto.jpg', content_type: 'image/jpg')
 sport6.save
 
 # sport6 = Sport.new(name: "Diving")
@@ -65,11 +72,11 @@ offer1 = Offer.new(
   location: 'Lisbon',
   latitude: 38.722028,
   longitude: -9.139139,
-  user: User.first,
-  sport: Sport.first
+  user: User.all[1],
+  sport: Sport.all[0]
 )
 file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
-offer1.photo.attach(io: file, filename: 'ski.jpg', content_type: 'image/jpg')
+offer1.photo.attach(io: file, filename: 'Ski.jpg', content_type: 'image/jpg')
 offer1.save
 
 offer2 = Offer.new(
@@ -80,11 +87,11 @@ offer2 = Offer.new(
   location: 'Rio de Janeiro',
   latitude: 38.722028,
   longitude: -9.139139,
-  user: User.third,
-  sport: Sport.all[3]
+  user: User.all[1],
+  sport: Sport.all[1]
 )
 file = URI.open('https://img.redbull.com/images/c_crop,w_5122,h_2561,x_0,y_2956,f_auto,q_auto/c_scale,w_1200/redbullcom/2019/06/03/83ddcec2-b607-4def-a965-abb0b94fa412/how-to-take-indoor-climbing-outdoors')
-offer2.photo.attach(io: file, filename: 'climb.jpg', content_type: 'image/jpg')
+offer2.photo.attach(io: file, filename: 'Climb.jpg', content_type: 'image/jpg')
 offer2.save
 
 offer3 = Offer.new(
@@ -95,8 +102,8 @@ offer3 = Offer.new(
   location: 'Monsanto',
   latitude: 39.46203,
   longitude: -8.7118,
-  user: User.all[4],
-  sport: Sport.all[4]
+  user: User.all[2],
+  sport: Sport.all[2]
 )
 file = URI.open('https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dw87df4949/images/plp/Mountain/Sender/ridestyle-downhill-canyon-sender-01.jpg?sw=1920')
 offer3.photo.attach(io: file, filename: 'Cycling.jpg', content_type: 'image/jpg')
@@ -110,11 +117,11 @@ offer4 = Offer.new(
   location: 'Dubai',
   latitude: 38.722028,
   longitude: -9.139139,
-  user: User.second,
-  sport: Sport.second
+  user: User.all[3],
+  sport: Sport.all[3]
 )
 file = URI.open('http://upload.wikimedia.org/wikipedia/commons/9/9b/Ocean_Wingsuit_Formation_%286366966219%29.jpg')
-offer4.photo.attach(io: file, filename: 'flying.jpg', content_type: 'image/jpg')
+offer4.photo.attach(io: file, filename: 'Sky Diving.jpg', content_type: 'image/jpg')
 offer4.save
 
 offer5 = Offer.new(
@@ -125,11 +132,11 @@ offer5 = Offer.new(
   location: 'Biarritz',
   latitude: 38.722028,
   longitude: -10.139139,
-  user: User.all[5],
-  sport: Sport.all[5]
+  user: User.all[4],
+  sport: Sport.all[4]
 )
 file = URI.open('https://www.boardsportsource.com/wp-content/uploads/2021/07/Mikey-February-by-Alan-Van-Gysen.jpg')
-offer5.photo.attach(io: file, filename: 'surfing.jpg', content_type: 'image/jpg')
+offer5.photo.attach(io: file, filename: 'Surfing.jpg', content_type: 'image/jpg')
 offer5.save
 
 offer6 = Offer.new(
@@ -140,11 +147,11 @@ offer6 = Offer.new(
   location: 'Vigo',
   latitude: 38.722028,
   longitude: -9.139139,
-  user: User.all[6],
-  sport: Sport.all[6]
+  user: User.all[5],
+  sport: Sport.all[5]
 )
 file = URI.open('https://racemotor.com.br/wp-content/uploads/2021/09/SI202109190758.jpg')
-offer6.photo.attach(io: file, filename: 'diving.jpg', content_type: 'image/jpg')
+offer6.photo.attach(io: file, filename: 'Motorbike.jpg', content_type: 'image/jpg')
 offer6.save
 
 p "sports with pics"
@@ -201,17 +208,107 @@ p "sports with pics"
 
 # p "Offers"
 
-User.all.each do |user|
-  Profile.create!(
-    user: user,
-    name: Faker::Name.name,
-    phone: Faker::PhoneNumber.cell_phone_in_e164,
-    age: rand(18..99),
-    bio: Faker::Hipster.sentence(word_count: 10),
-    address: Faker::Address.street_address,
-    user_type: "Guide"
-  )
-end
+# User.all.each do |user|
+#   Profile.create!(
+#     user: user,
+#     name: Faker::Name.name,
+#     phone: Faker::PhoneNumber.cell_phone_in_e164,
+#     age: rand(18..99),
+#     bio: Faker::Hipster.sentence(word_count: 10),
+#     address: Faker::Address.street_address,
+#     user_type: "Guide"
+#   )
+# end
+
+profile1 = User.new(name: "Misty Newton")
+file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
+profile1.photo.attach(io: file, filename: 'Misty Newton.jpg', content_type: 'image/jpg')
+profile1.save
+
+profile1 = User.new(
+  user: user,
+  name: "Misty Newton",
+  phone: 961234567,
+  age: 51,
+  bio: "Your life becomes a masterpiece when you learn to master peace.",
+  address: "U.S.",
+  user_type: "Guide"
+)
+
+profile2 = User.new(name: "Alice Guerrero")
+file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
+profile2.photo.attach(io: file, filename: 'Alice Guerrero.jpg', content_type: 'image/jpg')
+profile2.save
+
+profile2 = User.new(
+  user: user,
+  name: "Alice Guerrero",
+  phone: 965478965,
+  age: 36,
+  bio: "Your life does not get better by chance. It gets better by change.",
+  address: "Spain",
+  user_type: "Guide"
+)
+
+profile3 = User.new(name: "Perry Byrd")
+file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
+profile3.photo.attach(io: file, filename: 'Perry Byrd.jpg', content_type: 'image/jpg')
+profile3.save
+
+profile3 = User.new(
+  user: user,
+  name: "Perry Byrd",
+  phone: 968798654,
+  age: 27,
+  bio: "Go the extra mile, it’s never crowded.",
+  address: "London",
+  user_type: "Guide"
+)
+
+profile4 = User.new(name: "Shirley Wolf")
+file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
+profile4.photo.attach(io: file, filename: 'Genaro.jpg', content_type: 'image/jpg')
+profile4.save
+
+profile4 = User.new(
+  user: user,
+  name: "Shirley Wolf",
+  phone: 969874563,
+  age: 25,
+  bio: "Travel is the only thing you buy that makes you richer.",
+  address: "France",
+  user_type: "Guide"
+)
+
+profile5 = User.new(name: "Roberta Lloyd")
+file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
+profile5.photo.attach(io: file, filename: 'Genaro.jpg', content_type: 'image/jpg')
+profile5.save
+
+profile5 = User.new(
+  user: user,
+  name: "Roberta Lloyd",
+  phone: 967891234,
+  age: 45,
+  bio: "Take only memories, leave only footprints.",
+  address: "Dubai",
+  user_type: "Guide"
+)
+
+profile6 = User.new(name: "Jamie Miles")
+file = URI.open('https://cdn.betterwalls.com/pim/pr/WP/30016334/photo-wallpaper-candide-thovex-out-of-nowhere-into-nowhere-x_big01.jpg')
+profile6.photo.attach(io: file, filename: 'Jamie Miles.jpg', content_type: 'image/jpg')
+profile6.save
+
+profile6 = User.new(
+  user: user,
+  name: "Jamie Miles",
+  phone: 961237894,
+  age: 23,
+  bio: "Life is either a daring adventure or nothing at all.",
+  address: "Brazil",
+  user_type: "Guide"
+)
 
 # profile1 = Profile.new(
 #   name: "Skiing",
