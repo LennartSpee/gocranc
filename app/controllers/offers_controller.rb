@@ -22,7 +22,8 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     @review = Review.new
     @offers = current_user.offers
-    @markers = @offers.geocoded.map do |offer|
+
+    @markers = @offers.map do |offer|
       {
         lat: offer.latitude,
         lng: offer.longitude,

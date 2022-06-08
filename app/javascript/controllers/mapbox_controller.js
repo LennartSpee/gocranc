@@ -36,7 +36,7 @@ export default class extends Controller {
 
       popup._content.addEventListener("click", (event) => {
         let idMap = document.querySelector(".mapboxgl-popup-content").querySelector(".d-none").innerHTML
-        let url = `offers/${idMap}`
+        let url = `/offers/${idMap}`
         window.location.href =url;
       });
     });
