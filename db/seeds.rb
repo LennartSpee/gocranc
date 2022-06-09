@@ -139,9 +139,9 @@ profile7.save!
 offer1 = Offer.new(
   title: 'Skitour Davos',
   price: '50',
-  duration: '30',
+  duration: '8',
   description: 'When life gives you snow you go skiing…',
-  location: 'Lisbon',
+  location: 'Switzerland',
   user: User.all[0],
   sport: Sport.all[0]
 )
@@ -152,7 +152,7 @@ offer1.save
 offer2 = Offer.new(
   title: 'Climbing in Brazil',
   price: '50',
-  duration: '30',
+  duration: '3',
   description: 'Control your body, control your mind',
   location: 'Rio de Janeiro',
   user: User.all[1],
@@ -165,7 +165,7 @@ offer2.save
 offer3 = Offer.new(
   title: 'Cycling in Portugal',
   price: '50',
-  duration: '30',
+  duration: '6',
   description: 'You are one ride away from a good mood.',
   location: 'Monsanto',
   user: User.all[2],
@@ -204,7 +204,7 @@ offer5.save
 offer6 = Offer.new(
   title: 'Motorbike in Spain',
   price: '50',
-  duration: '30',
+  duration: '4',
   description: 'Everything looks better from the inside of a motorcycle helmet.',
   location: 'Vigo',
   user: User.all[5],
@@ -217,7 +217,7 @@ offer6.save
 offer7 = Offer.new(
   title: 'Skydiving in Evora',
   price: '200',
-  duration: '50',
+  duration: '3',
   description: 'Enjoy Portugal from your favorite view',
   location: 'Evora',
   user: User.all[3],
