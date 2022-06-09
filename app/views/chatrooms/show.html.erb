@@ -1,8 +1,13 @@
-<div class="m-5 container" data-controller="chatroom" data-chatroom-chatroom-id-value="<%= @chatroom.id %>">
-  <h1>Chat</h1>
+<div class="m-5 container"
+    data-controller="chatroom-subscription"
+    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 
-  <div class="messages">
+  <h1>#<%= @chatroom.name %>t</h1>
+
+  <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
       <div id="message-<%= message.id %>" class="text-<%= message.user == current_user ? 'end' : 'start' %>">
         <small>
           <strong><%= message.user.email %></strong>
@@ -10,7 +15,6 @@
         </small><br>
         <p class="mt-2 fs-6 badge px-3 py-2 rounded-pill bg-<%= message.user == current_user ? 'primary' : 'light text-dark' %>"><%= message.content %></p>
       </div>
-    <% end %>
   </div>
 
   <div class="mt-5">

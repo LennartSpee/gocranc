@@ -3,7 +3,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
   end
- 
+
   def create
     @chatroom = Chatroom.create(name: Faker::Internet.password)
 

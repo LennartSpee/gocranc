@@ -9,8 +9,7 @@ export default class extends Controller {
     this.channel = consumer.subscriptions.create(
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: data => console.log(data) }
-    );
-    console.log("SUBSCRIBED");
+    )
+    console.log(`Subscribed to the chatroom with the id ${this.chatroomIdValue}.`)
   }
 }
-chatroom:Z2lkOi8vZ29jcmFuYy9DaGF0cm9vbS84
