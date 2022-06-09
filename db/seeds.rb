@@ -129,8 +129,6 @@ offer1 = Offer.new(
   duration: '30',
   description: 'When life gives you snow you go skiing…',
   location: 'Lisbon',
-  latitude: 38.722028,
-  longitude: -9.139139,
   user: User.all[0],
   sport: Sport.all[0]
 )
@@ -144,8 +142,6 @@ offer2 = Offer.new(
   duration: '30',
   description: 'Control your body, control your mind',
   location: 'Rio de Janeiro',
-  latitude: 38.722028,
-  longitude: -9.139139,
   user: User.all[1],
   sport: Sport.all[1]
 )
@@ -159,8 +155,6 @@ offer3 = Offer.new(
   duration: '30',
   description: 'You are one ride away from a good mood.',
   location: 'Monsanto',
-  latitude: 39.46203,
-  longitude: -8.7118,
   user: User.all[2],
   sport: Sport.all[2]
 )
@@ -174,8 +168,6 @@ offer4 = Offer.new(
   duration: '30',
   description: 'Those who don´t jump, will never fly.',
   location: 'Dubai',
-  latitude: 38.722028,
-  longitude: -9.139139,
   user: User.all[3],
   sport: Sport.all[3]
 )
@@ -189,8 +181,6 @@ offer5 = Offer.new(
   duration: '30',
   description: 'Learn how to stand up on a bord and catch your first waves',
   location: 'Biarritz',
-  latitude: 38.722028,
-  longitude: -10.139139,
   user: User.all[4],
   sport: Sport.all[4]
 )
@@ -204,8 +194,6 @@ offer6 = Offer.new(
   duration: '30',
   description: 'Everything looks better from the inside of a motorcycle helmet.',
   location: 'Vigo',
-  latitude: 38.722028,
-  longitude: -9.139139,
   user: User.all[5],
   sport: Sport.all[5]
 )
