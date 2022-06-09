@@ -128,9 +128,9 @@ offer1 = Offer.new(
   price: '50',
   duration: '30',
   description: 'When life gives you snow you go skiing…',
-  location: 'Lisbon',
-  latitude: 38.722028,
-  longitude: -9.139139,
+  location: 'Switzerland',
+  latitude: 46.803270,
+  longitude: 9.836098,
   user: User.all[0],
   sport: Sport.all[0]
 )

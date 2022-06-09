@@ -1,4 +1,4 @@
-<div class="m-5 container">
+<div class="m-5 container" data-controller="chatroom" data-chatroom-chatroom-id-value="<%= @chatroom.id %>">
   <h1>Chat</h1>
 
   <div class="messages">
@@ -18,6 +18,7 @@
       remote: true,
       html: {class: "d-flex"} do |f| %>
         <%= f.input :content,
+          as: :string,
           label: false,
           placeholder: "Start typing...",
           wrapper_html: {class: "flex-grow-1"}
