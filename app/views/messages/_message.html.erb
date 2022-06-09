@@ -1,13 +1,9 @@
 <div id="message-<%= message.id %>" class="text-<%= message.user == current_user ? 'end' : 'start' %>">
-  <div class="container border-box">
-    <div class="chatroom">
-        <p class="mt-2 fs-6 badge px-3 py-2 rounded-pill bg-<%= message.user == current_user ? 'primary' : 'light text-dark' %>"><%= message.content %></p>
-          <%= cl_image_tag message.user.profile.photo.key,  class: "avatar dropdown-toggle ml-20px" %>
-    </div>
-    </div>
-    <div>
-      <%= message.user.profile.name %>
-      <small><i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i></small>
-    </div>
-    <br>
+  <small>
+    <strong><%= message.user.email %></strong>
+    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+  </small><br>
+  <p class="mt-2 fs-6 badge px-3 py-2 rounded-pill bg-<%= message.user == current_user ? 'primary' : 'light text-dark' %>">
+    <%= message.content %>
+  </p>
 </div>
