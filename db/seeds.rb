@@ -124,13 +124,13 @@ profile6 = Profile.new(
 profile6.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
 profile6.save!
 
-profile6 = Profile.new(
+profile7 = Profile.new(
   user: user7,
-  name: "Jamie Miles",
+  name: "Sy",
   phone: +351961237894,
   age: 23,
   bio: "Life is either a daring adventure or nothing at all.",
-  address: "Brazil",
+  address: "Lisbon",
   user_type: "Guide"
 )
 profile7.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/sy.png')), filename: 'sy.png')
