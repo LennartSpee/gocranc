@@ -21,16 +21,15 @@ class OffersController < ApplicationController
     @chatroom = Chatroom.all.last
     @offer = Offer.find(params[:id])
     @review = Review.new
-    @offers = current_user.offers
 
-    @markers = @offers.map do |offer|
+    @markers =[
       {
-        lat: offer.latitude,
-        lng: offer.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
+        lat: @offer.latitude,
+        lng: @offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: @offer }),
         image_url: helpers.asset_url("marker.png")
       }
-    end
+    ]
   end
 
   def new

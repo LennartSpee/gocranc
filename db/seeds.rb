@@ -18,6 +18,7 @@ user3 = User.create!(email: "perry@gmail.com", password: "123456")
 user4 = User.create!(email: "shirley@gmail.com", password: "123456")
 user5 = User.create!(email: "roberta@gmail.com", password: "123456")
 user6 = User.create!(email: "jamie@gmail.com", password: "123456")
+user7 = User.create!(email: "sy@gmail.com", password: "123456")
 
 p "user seeded"
 
@@ -46,7 +47,7 @@ file = URI.open('https://www.boardsportsource.com/wp-content/uploads/2021/07/Mik
 sport5.photo.attach(io: file, filename: 'Surfing.jpg', content_type: 'image/jpg')
 sport5.save
 
-sport6 = Sport.new(name: "Moto")
+sport6 = Sport.new(name: "Motorsports")
 file = URI.open('https://racemotor.com.br/wp-content/uploads/2021/09/SI202109190758.jpg')
 sport6.photo.attach(io: file, filename: 'Moto.jpg', content_type: 'image/jpg')
 sport6.save
@@ -60,7 +61,7 @@ profile1 = Profile.new(
   address: "U.S.",
   user_type: "Guide"
 )
-profile1.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
+profile1.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/profile2.png')), filename: 'profile2.png')
 profile1.save!
 
 profile2 = Profile.new(
@@ -72,7 +73,7 @@ profile2 = Profile.new(
   address: "Spain",
   user_type: "Guide"
 )
-profile2.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
+profile2.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/profile5.png')), filename: 'profile5.png')
 profile2.save!
 
 profile3 = Profile.new(
@@ -84,7 +85,7 @@ profile3 = Profile.new(
   address: "London",
   user_type: "Guide"
 )
-profile3.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
+profile3.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/profile4.png')), filename: 'profile4.png')
 profile3.save!
 
 profile4 = Profile.new(
@@ -96,7 +97,7 @@ profile4 = Profile.new(
   address: "France",
   user_type: "Guide"
 )
-profile4.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
+profile4.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/profile3.png')), filename: 'profile3.png')
 profile4.save!
 
 profile5 = Profile.new(
@@ -105,10 +106,10 @@ profile5 = Profile.new(
   phone: +351967891234,
   age: 45,
   bio: "Take only memories, leave only footprints.",
-  address: "Dubai",
+  address: "USA",
   user_type: "Guide"
 )
-profile5.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
+profile5.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/profile6.png')), filename: 'profile6.png')
 profile5.save!
 
 profile6 = Profile.new(
@@ -123,14 +124,24 @@ profile6 = Profile.new(
 profile6.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/avatar.png')), filename: 'avatar.png')
 profile6.save!
 
+profile7 = Profile.new(
+  user: user7,
+  name: "Sy",
+  phone: +351961237894,
+  age: 23,
+  bio: "Life is either a daring adventure or nothing at all.",
+  address: "Lisbon",
+  user_type: "Guide"
+)
+profile7.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/sy.png')), filename: 'sy.png')
+profile7.save!
+
 offer1 = Offer.new(
   title: 'Skitour Davos',
   price: '50',
-  duration: '30',
+  duration: '8',
   description: 'When life gives you snow you go skiing…',
   location: 'Switzerland',
-  latitude: 46.803270,
-  longitude: 9.836098,
   user: User.all[0],
   sport: Sport.all[0]
 )
@@ -141,11 +152,9 @@ offer1.save
 offer2 = Offer.new(
   title: 'Climbing in Brazil',
   price: '50',
-  duration: '30',
+  duration: '3',
   description: 'Control your body, control your mind',
   location: 'Rio de Janeiro',
-  latitude: 38.722028,
-  longitude: -9.139139,
   user: User.all[1],
   sport: Sport.all[1]
 )
@@ -156,11 +165,9 @@ offer2.save
 offer3 = Offer.new(
   title: 'Cycling in Portugal',
   price: '50',
-  duration: '30',
+  duration: '6',
   description: 'You are one ride away from a good mood.',
   location: 'Monsanto',
-  latitude: 39.46203,
-  longitude: -8.7118,
   user: User.all[2],
   sport: Sport.all[2]
 )
@@ -170,12 +177,10 @@ offer3.save!
 
 offer4 = Offer.new(
   title: 'Skydive in Dubai',
-  price: '50',
-  duration: '30',
+  price: '80',
+  duration: '3',
   description: 'Those who don´t jump, will never fly.',
   location: 'Dubai',
-  latitude: 38.722028,
-  longitude: -9.139139,
   user: User.all[3],
   sport: Sport.all[3]
 )
@@ -185,12 +190,10 @@ offer4.save
 
 offer5 = Offer.new(
   title: 'Surfing in France',
-  price: '50',
-  duration: '30',
+  price: '25',
+  duration: '2',
   description: 'Learn how to stand up on a bord and catch your first waves',
   location: 'Biarritz',
-  latitude: 38.722028,
-  longitude: -10.139139,
   user: User.all[4],
   sport: Sport.all[4]
 )
@@ -199,18 +202,56 @@ offer5.photo.attach(io: file, filename: 'Surfing.jpg', content_type: 'image/jpg'
 offer5.save
 
 offer6 = Offer.new(
-  title: 'Motobike in Spain',
+  title: 'Motorbike in Spain',
   price: '50',
-  duration: '30',
+  duration: '4',
   description: 'Everything looks better from the inside of a motorcycle helmet.',
   location: 'Vigo',
-  latitude: 38.722028,
-  longitude: -9.139139,
   user: User.all[5],
   sport: Sport.all[5]
 )
 file = URI.open('https://racemotor.com.br/wp-content/uploads/2021/09/SI202109190758.jpg')
 offer6.photo.attach(io: file, filename: 'Motorbike.jpg', content_type: 'image/jpg')
 offer6.save
+
+offer7 = Offer.new(
+  title: 'Skydiving in Evora',
+  price: '200',
+  duration: '3',
+  description: 'Enjoy Portugal from your favorite view',
+  location: 'Evora',
+  user: User.all[3],
+  sport: Sport.all[3]
+)
+file = URI.open('https://www.airemotions.com/wp-content/uploads/2020/08/air-emotions-salto-paraquedas-portugal-skydive-tandem-algarve-portimao.jpg')
+offer7.photo.attach(io: file, filename: 'Motorbike.jpg', content_type: 'image/jpg')
+offer7.save
+
+offer8 = Offer.new(
+  title: 'Tow in Surfing in Nazare',
+  price: '250',
+  duration: '4',
+  description: 'Go for your biggest experience whenever swell arrives',
+  location: 'Nazare',
+  user: User.all[6],
+  sport: Sport.all[4]
+)
+file = URI.open('https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/03/06/1331847907687_2/nazare-march-first-mega-swell')
+offer8.photo.attach(io: file, filename: 'Surfing.jpg', content_type: 'image/jpg')
+offer8.save
+
+offer9 = Offer.new(
+  title: 'Surfing Ireland',
+  price: '50',
+  duration: '3',
+  description: 'Learn how to stand up on a bord and catch your first waves',
+  location: 'Biarritz',
+  user: User.all[4],
+  sport: Sport.all[4]
+)
+file = URI.open('https://www.surfholidays.com/assets/images/blog/2015-11-10-Mullaghmore%20by%20Christian%20McLeod.jpg')
+offer9.photo.attach(io: file, filename: 'Surfing.jpg', content_type: 'image/jpg')
+offer9.save
+
 
 p "sports with pics"

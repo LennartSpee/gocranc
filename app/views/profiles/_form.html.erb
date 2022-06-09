@@ -10,15 +10,16 @@
             <%= f.input :phone, required: false, autofocus: true, class:"transp-input", :input_html => { :value => "+351961237894"} %>
             <%= f.input :age, required: false, autofocus: true, class:"transp-input", :input_html => { :value => "23"} %>
             <%= f.input :favorite_places, required: false, autofocus: true, class:"transp-input", :input_html => { :value => "Beach, Forest, Mountains"} %>
-            <%= f.input :social_medias, required: false, autofocus: true, class:"transp-input", :input_html => { :value => "Facebook, Instagram"} %>
             <%= f.input :address, required: false, required: false, :input_html => { :value => "Brazil"} %>
             <%= f.input :bio, required: false, class:"transp-input", :input_html => { :value => "Life is either a daring adventure or nothing at all."} %>
             <div class="sports-flex">
               <%= f.input :sports, required: false, collection: ["Skiing", "Climbing", "Biking", "Flying", "Surfing", "Moto"], include_hidden:false, as: :check_boxes, input_html: { class: "checkbox px-3"}, class:"transp-input"%>
               <%# <%= f.input :user_type, required: false, collection: ["User", "Guide"], include_hidden:false, input_html: {class:"transp-input"} %>
             </div>
-            <legend class="col-form-label pt-0">Wanna be a guide?</legend>
-            <%= f.check_box :user_type, required: false %> <span></span>
+            <div class="d-flex justify-content-between ">
+            <%= f.check_box :user_type, required: false, class:"me-3 mt-2 mx-auto" %> <span></span>
+            <legend class="col-form-label pt-0 wh-5">Wanna be a guide?</legend>
+            </div>
           </div>
           <%= f.button :submit, "Submit", class: "btn btn-accent mt-4" %>
         <% end %>

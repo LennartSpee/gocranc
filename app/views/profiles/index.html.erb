@@ -1,12 +1,18 @@
-<h1 class="text-center m-5">Our Guides</h1>
+<h1 class="text-center m-5 justify-content-center">Our Guides</h1>
 
 <div class="container">
   <div class="row">
     <% @profiles.each do |profile| %>
-      <div class="col-4 guide">
-        <%= cl_image_tag profile.photo.key %>
-        <%= profile.name %>
+      <div class="col-4 col-xs-12 p-2">
+        <div class="col-8 p-1">
+          <%= cl_image_tag profile.photo.key, height: 250 %>
+          </div>
+         <div class="col-4 p-1">
+          <h2><%= profile.name%></h2>
+          </div>
+          <div class="p-2">
         <%= link_to 'See Guide', profile_path(profile), class: "btn btn-accent" %>
+        </div>
       </div>
     <% end %>
   </div>
