@@ -3,7 +3,7 @@
     <div class="col">
     <h1>My profile <%= link_to 'Edit', edit_profile_path, class: "btn btn-accent" %> </h1>
     <% if @profile.photo.key %>
-    <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill, class: "rounded-circle" %>
+      <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill, class: "rounded-circle" %>
     <% else %>
       <%= image_tag "user.png", alt: "user_getcrank.io", height: 250, width: 250%>
     <% end %>
