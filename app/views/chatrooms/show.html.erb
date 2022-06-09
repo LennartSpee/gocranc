@@ -1,25 +1,20 @@
-
-<div class="row justify-content-center m-5">
-<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+<div class="m-5 container m-auto" data-controller="chatroom"
+  data-chatroom-chatroom-id-value="<%= @chatroom.id %>"
+  data-chatroom-user-id-value="<%= current_user.id %>">
   <h1>Chat</h1>
 
-  <div class="messages">
+  <div class="messages" data-chatroom-target="messages">
     <% @chatroom.messages.each do |message| %>
-      <div id="message-<%= message.id %>" class="text-<%= message.user == current_user ? 'end' : 'start' %>">
-        <small>
-          <strong><%= message.user.email %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small><br>
-        <p class="mt-2 fs-6 badge px-3 py-2 rounded-pill bg-<%= message.user == current_user ? 'primary' : 'light text-dark' %>"><%= message.content %></p>
-      </div>
+      <%= render partial: 'messages/message', locals: { message: message } %>
     <% end %>
   </div>
 
   <div class="mt-5">
-    <%= simple_form_for [@chatroom, @message],
+    <%=  simple_form_for [@chatroom, @message],
       remote: true,
-      html: {class: "d-flex"} do |f| %>
+        html: {data: {action: "ajax:success->chatroom#resetForm"}, class: "d-flex", autocomplete: "off" } do |f| %>
         <%= f.input :content,
+          as: :string,
           label: false,
           placeholder: "Start typing...",
           wrapper_html: {class: "flex-grow-1"}

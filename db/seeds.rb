@@ -141,7 +141,7 @@ offer1 = Offer.new(
   price: '50',
   duration: '8',
   description: 'When life gives you snow you go skiing…',
-  location: 'Lisbon',
+  location: 'Switzerland',
   user: User.all[0],
   sport: Sport.all[0]
 )
