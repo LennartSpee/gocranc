@@ -245,13 +245,12 @@ offer9 = Offer.new(
   price: '50',
   duration: '3',
   description: 'Learn how to stand up on a bord and catch your first waves',
-  location: 'Biarritz',
+  location: 'Inchydoney',
   user: User.all[4],
   sport: Sport.all[4]
 )
 file = URI.open('https://www.surfholidays.com/assets/images/blog/2015-11-10-Mullaghmore%20by%20Christian%20McLeod.jpg')
 offer9.photo.attach(io: file, filename: 'Surfing.jpg', content_type: 'image/jpg')
 offer9.save
-
 
 p "sports with pics"
